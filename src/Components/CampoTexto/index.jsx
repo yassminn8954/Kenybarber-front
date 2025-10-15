@@ -1,14 +1,21 @@
 import styled from "styled-components"
 import Botao from "../Botao";
 
+const GapFormulario = styled.form`
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  display: flex;
+`
+
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 40px;
 
   .input-container {
     position: relative;
-    width: 500px;
+    width: 500px; 
   }
 
   .input {
@@ -112,7 +119,7 @@ const CampoTexto = () => {
   }
   return (
     <StyledWrapper>
-      <form onSubmit={handleSubmit} autoComplete="off">
+      <GapFormulario onSubmit={handleSubmit} autoComplete="off">
         <div className="input-container">
           <input required type="text" name="nome" className="input" placeholder="Digite seu nome" autoComplete="off" />
           <div className="top-line" />
@@ -137,7 +144,7 @@ const CampoTexto = () => {
           <div className="under-line" />
         </div>
         <Botao/>
-      </form>
+      </GapFormulario>
     </StyledWrapper>
   );
 };

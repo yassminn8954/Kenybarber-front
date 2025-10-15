@@ -6,26 +6,24 @@ import Whatsapp from '../../assets/sociais/whatsapp.png'
 
 const StyledFooter = styled.footer`
   width: 100%;
-  background: var(--cor-fundo);
-  color: var(--cor-fontes-links);
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
   font-family: 'Judson', serif;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color:rgba(0, 0, 0, 0.09);
   padding: 30px 40px ;
 `;
 
 const FooterContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  
-  justify-content: space-between; 
-  
+  justify-content: center;
   max-width: 1200px;
   margin-top: 0px;
   font-family: 'Judson', serif;
   padding: 0 15px; 
-  
- 
-  gap: 80px 60px; 
+  gap: 80px 60px;
+
 `;
 
 const FooterSection = styled.div`

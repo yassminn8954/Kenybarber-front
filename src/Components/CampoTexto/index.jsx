@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 const StyledWrapper = styled.div`
+background-color: #000;
   display: flex;
   flex-direction: column;
   gap: 40px;

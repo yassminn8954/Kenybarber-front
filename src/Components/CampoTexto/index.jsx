@@ -77,13 +77,13 @@ const CampoTexto = () => {
   return (
     <StyledWrapper>
       <div className="input-container">
-        <input required type="text" name="nome" className="input" placeholder="Digite seu nome" />
+        <input required type="text" name="nome" className="input" placeholder="Digite seu nome"  autoComplete="off"/>
         <div className="top-line" />
         <div className="under-line" />
       </div>
 
       <div className="input-container">
-        <input required type="password" name="senha" className="input" placeholder="Digite sua senha" />
+        <input required type="password" name="senha" className="input" placeholder="Digite sua senha" autoComplete="off"/>
         <div className="top-line" />
         <div className="under-line" />
       </div>

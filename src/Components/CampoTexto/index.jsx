@@ -1,6 +1,14 @@
 import styled from "styled-components"
 import Botao from "../Botao";
 
+const GapFormulario = styled.form`
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  display: flex;
+`
+
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;

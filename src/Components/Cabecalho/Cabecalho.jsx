@@ -19,7 +19,7 @@ const Container = styled.header`
   }
 
   nav a {
-    font-size: 24px;
+    font-size: 26px;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -43,7 +43,7 @@ const Cabecalho = () => {
         <a href="#locais">Locais</a>
         <a href="#contato">Contato</a>
         <a href="#mais">Mais</a>
-        <a onClick={() => navigate("/login")} style={{ cursor: "pointer" }}>
+        <a onClick={() => navigate("/cadastro")} style={{ cursor: "pointer" }}>
           Usuário
         </a>
 

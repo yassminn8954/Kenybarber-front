@@ -20,7 +20,7 @@ const FooterContainer = styled.div`
   justify-content: space-between; 
   
   max-width: 1200px;
-  margin: auto;
+  margin-top: 0px;
   font-family: 'Judson', serif;
   padding: 0 15px; 
   

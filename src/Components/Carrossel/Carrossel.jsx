@@ -8,9 +8,9 @@ import Imagem4 from '../../assets/imagem/carrossel5.jpg';
 
 const CarouselContainer = styled.div`
   width: 100vw;
-  height: 100vh;
   position: relative;
   overflow: hidden;
+  margin: none;
 `;
 
 
@@ -23,14 +23,14 @@ const CarouselInner = styled.div`
 
 const CarouselItem = styled.div`
   flex: 0 0 100vw;
-  height: 100vh;
+
 
   img {
     width: 100%;
-    height: 500px;
+    height: 650px;
     object-fit: cover;
     display: block;
-    border-radius: 30px; */
+    border-radius: 30px; 
   }
 `;
 

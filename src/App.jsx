@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inicial from "./pages/Inicial";
-import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
 
-function App() {
+const App=()=> {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Inicial />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
       </Routes>
     </BrowserRouter>
   );

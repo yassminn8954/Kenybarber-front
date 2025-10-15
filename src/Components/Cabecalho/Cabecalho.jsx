@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Barbeirocoptero from "../Barbeirocoptero/Barbeirocoptero";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.header`
   display: flex;
@@ -31,6 +32,7 @@ const Container = styled.header`
 `;
 
 const Cabecalho = () => {
+   const navigate = useNavigate();
   return (
     <Container>
       <Barbeirocoptero />
@@ -41,7 +43,10 @@ const Cabecalho = () => {
         <a href="#locais">Locais</a>
         <a href="#contato">Contato</a>
         <a href="#mais">Mais</a>
-        <a href="#usuario">Usuário</a>
+        <a onClick={() => navigate("/login")} style={{ cursor: "pointer" }}>
+          Usuário
+        </a>
+
       </nav>
       <Barbeirocoptero />
     </Container>

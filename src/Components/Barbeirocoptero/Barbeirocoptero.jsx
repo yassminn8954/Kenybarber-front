@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Imagem from "../../../public/imagem/barber-pole.png";
+import Imagem from '../../assets/imagem/barber-pole.png';
 
 const Giragira = styled.figure`
   width: 60px;

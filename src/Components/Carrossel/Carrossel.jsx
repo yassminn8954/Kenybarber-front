@@ -1,9 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Imagem1 from '../../../public/imagem/carrossel2.jpg';
-import Imagem2 from '../../../public/imagem/carrossel3.png';
-import Imagem3 from '../../../public/imagem/carrossel4.jpg';
-import Imagem4 from '../../../public/imagem/carrossel5.jpg';
+import Imagem1 from '../../assets/imagem/carrossel2.jpg';
+import Imagem2 from '../../assets/imagem/carrossel3.png';
+import Imagem3 from '../../assets/imagem/carrossel4.jpg';
+import Imagem4 from '../../assets/imagem/carrossel5.jpg';
 
 
 const CarouselContainer = styled.div`

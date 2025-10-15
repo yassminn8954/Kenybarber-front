@@ -20,6 +20,7 @@ const StyledWrapper = styled.div`
     outline: none;
     box-shadow: 1px 4px 0px 3px #aa8b43;
     transition: all 0.5s;
+    color: #fff;
   }
 
   .input:focus {

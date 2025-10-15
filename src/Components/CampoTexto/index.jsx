@@ -22,6 +22,7 @@ const StyledWrapper = styled.div`
     box-shadow: 1px 4px 0px 3px #aa8b43;
     transition: all 0.5s;
     color: #fff;
+   
   }
 
   .input:focus {
@@ -72,6 +73,9 @@ const StyledWrapper = styled.div`
     transform: scale(1);
     transition: all 0.5s;
   }
+    .gap{
+    gap: 30px;
+    }
 `;
 
 const CampoTexto = () => {
@@ -112,7 +116,7 @@ const CampoTexto = () => {
   }
   return (
     <StyledWrapper>
-      <form onSubmit={handleSubmit} autoComplete="off">
+      <form className="gap" onSubmit={handleSubmit} autoComplete="off">
         <div className="input-container">
           <input required type="text" name="nome" className="input" placeholder="Digite seu nome" autoComplete="off" />
           <div className="top-line" />

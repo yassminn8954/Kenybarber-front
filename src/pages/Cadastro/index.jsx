@@ -12,7 +12,7 @@ const Fundo = styled.div`
   align-items: center;
 `;
 
-const Formulario = styled.form`
+const Formulario = styled.div`
     background-color: #000;
     width: 700px;
     flex-direction: column;
@@ -29,7 +29,6 @@ const Cadastro = () => {
       <Formulario>
         <Imagem />
         <CampoTexto />
-        <Botao />
       </Formulario>
     </Fundo>
   );

@@ -9,7 +9,6 @@ const Container = styled.header`
   padding: 1rem;
   color: white;
   height: 40px;
-  margin-top: 50px;
 
   nav {
     flex: 1;
@@ -40,7 +39,9 @@ const Cabecalho = () => {
         <a href="#home">Home</a>
         <a href="#profissionais">Profissionais</a>
         <a href="#calendario">Calendário</a>
-        <a href="#locais">Locais</a>
+        <a onClick={() => navigate("/locais")} style={{ cursor: "pointer" }}>
+          Locais
+          </a>
         <a href="#contato">Contato</a>
         <a href="#mais">Mais</a>
         <a onClick={() => navigate("/cadastro")} style={{ cursor: "pointer" }}>

@@ -1,0 +1,26 @@
+[
+  {
+    "nome": "União da Vitória",
+    "estado": "PR",
+    "endereco": "Avenida Manoel Ribas, nº 5049, Centro",
+    "telefone": "(42) 96845-5227",
+    "redes": {
+      "whatsapp": true,
+      "instagram": true,
+      "localizacao": true
+    },
+    "imagem": "../../assets/Cidades/uniao-da-vitoria.png"
+  },
+  {
+    "nome": "Porto União",
+    "estado": "PR",
+    "endereco": "Rua Exemplo, nº 123, Centro",
+    "telefone": "(42) 99999-9999",
+    "redes": {
+      "whatsapp": true,
+      "instagram": false,
+      "localizacao": true
+    },
+    "imagem": "caminho/para/imagem2.png"
+  }
+]

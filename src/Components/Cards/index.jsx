@@ -16,7 +16,7 @@ const ContainerCards = styled.div`
 
 // Card individual
 const Card = styled.div`
-  background-color: #d3d0d0;
+  background-color: #c7c4c4;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -49,6 +49,10 @@ const CardBody = styled.div`
 const CardTitle = styled.h2`
   font-size: 28px;
   color: #4E3118;
+
+  &:hover{
+    color: #976132;
+  }
 `;
 
 // Endereço
@@ -77,19 +81,6 @@ const CardTelefone = styled.a`
 `;
 
 
-// Ícones de redes sociais
-const CardIcons = styled.div`
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-
-  a {
-    color: #333;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-  }
-`;
-
 const Cards = () => {
   return (
     <ContainerCards>
@@ -106,23 +97,6 @@ const Cards = () => {
             </CardEndereco>
            <CardTelefone href={`tel:${local.telefone}`}>{local.telefone}
 </CardTelefone>
-            <CardIcons>
-              {local.whatsapp && (
-                <a href={local.whatsapp} target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-whatsapp"></i>
-                </a>
-              )}
-              {local.instagram && (
-                <a href={local.instagram} target="_blank" rel="noopener noreferrer">
-                  <i className="fa-brands fa-instagram"></i>
-                </a>
-              )}
-              {local.maps && (
-                <a href={local.maps} target="_blank" rel="noopener noreferrer">
-                  <i className="fa-solid fa-location-dot"></i>
-                </a>
-              )}
-            </CardIcons>
           </CardBody>
         </Card>
       ))}

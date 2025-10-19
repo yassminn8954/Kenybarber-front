@@ -22,7 +22,7 @@ const Locais = () => {
           <LocaisHeader />
           <Cards />
        </Fundo>
-       <Footer  corFundo="#979595" corTexto="#FFD700"/>
+       <Footer  corFundo="#a3a1a1" corTexto="#4E3118"/>
     </>
     );
 }

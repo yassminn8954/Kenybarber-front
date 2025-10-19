@@ -4,23 +4,41 @@
     "estado": "PR",
     "endereco": "Avenida Manoel Ribas, nº 5049, Centro",
     "telefone": "(42) 96845-5227",
-    "redes": {
-      "whatsapp": true,
-      "instagram": true,
-      "localizacao": true
-    },
-    "imagem": "../../assets/Cidades/uniao-da-vitoria.png"
+    "imagem": "uniao-da-vitoria.png"
   },
   {
     "nome": "Porto União",
-    "estado": "PR",
+    "estado": "SC",
     "endereco": "Rua Exemplo, nº 123, Centro",
-    "telefone": "(42) 99999-9999",
-    "redes": {
-      "whatsapp": true,
-      "instagram": false,
-      "localizacao": true
-    },
-    "imagem": "caminho/para/imagem2.png"
+    "telefone": "(42) 98788-5824",
+    "imagem": "porto-uniao.png"
+  },
+  {
+    "nome": "Bituruna",
+    "estado": "PR",
+    "endereco": "Rua Central, nº 200",
+    "telefone": "(42) 98875-3659",
+    "imagem": "bituruna.png"
+  },
+  {
+    "nome": "Porto Vitória",
+    "estado": "PR",
+    "endereco": "Rua Rio Jordão, nº 135",
+    "telefone": "(42) 98562-6666",
+    "imagem": "porto-vitoria.png"
+  },
+  {
+    "nome": "São Mateus do Sul",
+    "estado": "PR",
+    "endereco": "Rua Joaquina Maria, nº 148",
+    "telefone": "(42) 95853-6666",
+    "imagem": "sao-mateus-do-sul.png"
+  },
+   {
+    "nome": "Curitiba",
+    "estado": "PR",
+    "endereco": "Rua da Matriz, nº 45",
+    "telefone": "(42) 98756-3321",
+    "imagem": "curitiba.png"
   }
 ]

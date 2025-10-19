@@ -1,23 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import locais from "./locais.json";
+import Footer from "../Footer";
+
 
 // Container geral dos cards
 const ContainerCards = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 50px;
+  padding: 40px;
+  margin-bottom: 50px;
 `;
 
 // Card individual
 const Card = styled.div`
-  background-color: #fff;
-  border-radius: 12px;
+  background-color: #d3d0d0;
+  border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
-  width: 300px;
+  width: 420px;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s;
@@ -44,25 +47,37 @@ const CardBody = styled.div`
 
 // Título
 const CardTitle = styled.h2`
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 28px;
+  color: #4E3118;
 `;
 
 // Endereço
 const CardEndereco = styled.p`
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 16px;
+  color: #4E3118;
   line-height: 1.4;
 `;
 
 // Telefone
-const CardTelefone = styled.p`
-  font-size: 0.9rem;
+const CardTelefone = styled.a`
+  font-size: 16px;
   font-weight: bold;
-  color: #444;
+  color: #4E3118;      
+  text-decoration: none; 
+  
+  &:hover {
+    text-decoration: underline; 
+    color: #3a2513;
+    cursor: pointer;
+  }
+
+  &:visited {
+    color: #4E3118;
+  }
 `;
 
-// Ícones de redes
+
+// Ícones de redes sociais
 const CardIcons = styled.div`
   display: flex;
   gap: 15px;
@@ -72,10 +87,6 @@ const CardIcons = styled.div`
     color: #333;
     font-size: 1.2rem;
     transition: color 0.3s;
-
-    &:hover {
-      color: #25d366; // ex: WhatsApp verde
-    }
   }
 `;
 
@@ -85,16 +96,16 @@ const Cards = () => {
       {locais.map((local, index) => (
         <Card key={index}>
           <CardImg
-            src={`/imagens/${local.imagem}`} 
-            alt={local.nome}
-          />
+              src={new URL(`../../assets/Cidades/${local.imagem}`, import.meta.url).href}  alt={local.nome}
+              />
           <CardBody>
             <CardTitle>{local.nome}</CardTitle>
             <CardEndereco>
               {local.nome} - {local.estado} <br />
               {local.endereco}
             </CardEndereco>
-            <CardTelefone>{local.telefone}</CardTelefone>
+           <CardTelefone href={`tel:${local.telefone}`}>{local.telefone}
+</CardTelefone>
             <CardIcons>
               {local.whatsapp && (
                 <a href={local.whatsapp} target="_blank" rel="noopener noreferrer">
@@ -116,6 +127,7 @@ const Cards = () => {
         </Card>
       ))}
     </ContainerCards>
+
   );
 };
 

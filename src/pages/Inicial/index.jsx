@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Cabecalho from "../../Components/Cabecalho/Cabecalho"
 import Carrossel from "../../Components/Carrossel/Carrossel"
-import Footer from "../../Components/Footer/Footer"
+import Footer from "../../Components/Footer"
 import BarraSearch from "../../Components/Search/Search"
 import Sobre from "../../Components/Sobre"
 import './Inicial.css'

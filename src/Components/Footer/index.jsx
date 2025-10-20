@@ -1,10 +1,9 @@
-import React from 'react';
+import React from 'react';  
 import styled from 'styled-components';
 import Instagram from '../../assets/sociais/instagram-icon.png';
 import Twitter from '../../assets/sociais/twitter-x.png';
 import Whatsapp from '../../assets/sociais/whatsapp.png';
 
-// --- ESTILOS ---
 const StyledFooter = styled.footer`
   width: 100%;
   display: flex;
@@ -31,14 +30,14 @@ const FooterSection = styled.div`
 
   h2, h3 {
     color: ${({ corTexto }) => corTexto || '#000'};
-    font-size: 26px;
-    margin-bottom: 15px;
+    font-size: 30px;
+    margin-bottom: 5px;
   }
 
   p {
     color: ${({ corTexto }) => corTexto || '#000'};
-    margin: 8px 0;
-    font-size: 17px;
+    margin: 10px 0;
+    font-size: 18px;
   }
 `;
 
@@ -72,7 +71,6 @@ const FooterBottom = styled.div`
   color: ${({ corTexto }) => corTexto || '#000'};
 `;
 
-// --- COMPONENTE ---
 const Footer = ({ corTexto, corFundo }) => {
   return (
     <StyledFooter corFundo={corFundo}>
@@ -105,7 +103,7 @@ const Footer = ({ corTexto, corFundo }) => {
         </FooterSection>
       </FooterContainer>
 
-      <FooterBottom corTexto={corTexto}>
+      <FooterBottom>
         &copy; 2025 Barbearia Kenybarber. Todos os direitos reservados.
       </FooterBottom>
     </StyledFooter>

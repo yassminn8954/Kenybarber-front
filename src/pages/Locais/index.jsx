@@ -12,7 +12,7 @@ const Fundo = styled.div`
   flex-direction: column; 
   align-items: center;   
   justify-content: flex-start; 
-  padding: 20px 0;        
+  padding: 20px 0;    
 `;
 
 const Locais = () => {

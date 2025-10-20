@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Imagem from '../../assets/imagem/barber-pole.png';
 
 const Giragira = styled.figure`
-  width: 60px;
+  width: 70px;
   margin: 100px;
   
   img {

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -45,7 +46,7 @@ const Button = styled.button`
   }
 `;
 
-const Text = styled.span`
+const Texto = styled.span`
   color: #f8c256;
   font-weight: 700;
   margin: auto;
@@ -53,12 +54,14 @@ const Text = styled.span`
   width: fit-content;
 `;
 
- const Botao=()=> {
+const Botao = ({ texto, destino }) => {
+  const navigate = useNavigate();
+
   return (
-    <Button>
-      <Text className="text">Cadastrar</Text>
+    <Button onClick={() => navigate(destino)}>
+      <Texto>{texto}</Texto>
     </Button>
   );
-}
+};
 
-export default Botao
+export default Botao;

@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import Botao from "../Botao";
 
 const GapFormulario = styled.form`
   flex-direction: column;
@@ -9,7 +8,7 @@ const GapFormulario = styled.form`
   display: flex;
 `
 
-const StyledWrapper = styled.div`
+export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -149,7 +148,6 @@ const CampoTexto = () => {
           <div className="top-line" />
           <div className="under-line" />
         </div>
-        <Botao/>
       </GapFormulario>
     </StyledWrapper>
   );

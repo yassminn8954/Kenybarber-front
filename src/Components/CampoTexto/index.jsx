@@ -98,17 +98,18 @@ const CampoTexto = () => {
     };
 
     try {
-      const res = await fetch('http://localhost:3000/usuarios/cadastro', {
+      const res = await fetch('http://localhost:3000/usuarios', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
+        credentials: 'include',
       });
 
       const body = await res.json();
 
       if (res.status === 201) {
         // sucesso
-        console.log('Cadastrado:', body.usuario);
+        alert('Usuario cadastrado com sucesso, volte a pagina de login');
         // redirecionar ou mostrar mensagem
       } else if (res.status === 400) {
         // validação/email duplicado

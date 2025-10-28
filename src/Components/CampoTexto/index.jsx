@@ -1,4 +1,9 @@
+/* eslint-disable no-undef */
 import styled from "styled-components"
+import Botao from "../Botao";
+import { useNavigate } from "react-router-dom";
+
+
 
 const GapFormulario = styled.form`
   flex-direction: column;
@@ -84,8 +89,13 @@ export const StyledWrapper = styled.div`
     gap: 30px;
     }
 `;
+const Paragrafo=styled.p`
+color:#fff;`
+const Link=styled.a`
+color:#f8c256;`
 
 const CampoTexto = () => {
+  const navigate = useNavigate();
   async function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -109,6 +119,7 @@ const CampoTexto = () => {
       if (res.status === 201) {
         // sucesso
         alert('Usuario cadastrado com sucesso, volte a pagina de login');
+        navigate('/login');
         // redirecionar ou mostrar mensagem
       } else if (res.status === 400) {
         // validação/email duplicado
@@ -132,12 +143,6 @@ const CampoTexto = () => {
         </div>
 
         <div className="input-container">
-          <input required type="password" name="senha" className="input" placeholder="Digite sua senha" autoComplete="off" />
-          <div className="top-line" />
-          <div className="under-line" />
-        </div>
-
-        <div className="input-container">
           <input required type="tel" name="telefone" className="input" placeholder="Digite seu telefone" />
           <div className="top-line" />
           <div className="under-line" />
@@ -148,6 +153,13 @@ const CampoTexto = () => {
           <div className="top-line" />
           <div className="under-line" />
         </div>
+          <div className="input-container">
+          <input required type="password" name="senha" className="input" placeholder="Digite sua senha" autoComplete="off" />
+          <div className="top-line" />
+          <div className="under-line" />
+        </div>
+         <Botao texto="Cadastrar" destino="/login" />
+          <Paragrafo >Já possui login? <Link href="http://localhost:5173/login"> clique aqui</Link></Paragrafo>
       </GapFormulario>
     </StyledWrapper>
   );

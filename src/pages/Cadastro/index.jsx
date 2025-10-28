@@ -22,7 +22,7 @@ export const Formulario = styled.div`
     box-shadow: 0px 0px 5px 6px #4d3d19;
     gap: 30px;
     border-radius: 4px;
-    height: ${({ $height }) => $height || '42vw'} ;
+    height: ${({ $height }) => $height || '45vw'} ;
 `;
 
 const Cadastro = () => {
@@ -30,8 +30,8 @@ const Cadastro = () => {
     <Fundo>
       <Formulario>
         <Imagem />
-        <CampoTexto />
-        <Botao texto="Já tenho conta" destino="/login" />
+        <CampoTexto /> 
+    
       </Formulario>
     </Fundo>
   );

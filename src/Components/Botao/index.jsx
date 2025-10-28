@@ -17,7 +17,7 @@ const Button = styled.button`
   outline: none;
   transition: all 0.3s;
   user-select: none;
-  margin-bottom: 30px;
+  
 
   &:hover {
     box-shadow:
@@ -46,7 +46,7 @@ const Button = styled.button`
   }
 `;
 
-const Texto = styled.span`
+export const Texto = styled.span`
   color: #f8c256;
   font-weight: 700;
   margin: auto;
@@ -54,11 +54,10 @@ const Texto = styled.span`
   width: fit-content;
 `;
 
-const Botao = ({ texto, destino }) => {
-  const navigate = useNavigate();
+const Botao = ({texto} ) => {
 
   return (
-    <Button onClick={() => navigate(destino)}>
+    <Button type="submit">
       <Texto>{texto}</Texto>
     </Button>
   );

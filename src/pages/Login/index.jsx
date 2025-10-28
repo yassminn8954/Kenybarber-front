@@ -1,4 +1,4 @@
-import styled from "styled-components";
+
 import { Fundo } from "../Locais";
 import { StyledWrapper } from "../../Components/CampoTexto";
 import Imagem from '../../Components/Imagem'

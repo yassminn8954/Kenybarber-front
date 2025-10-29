@@ -9,7 +9,7 @@ const StyledFooter = styled.footer`
   flex-direction: column;
   align-items: center;
   font-family: 'Judson', serif;
-  background-color: ${({ corFundo }) => corFundo || 'rgba(0, 0, 0, 0.09)'};
+  background-color: ${({ $corfundo }) => $corfundo || 'rgba(0, 0, 0, 0.09)'};
 `;
 
 const FooterContainer = styled.div`
@@ -29,18 +29,21 @@ const FooterContainer = styled.div`
 const FooterSection = styled.div`
   flex: 1 1 250px;
   margin-bottom: 30px;
-  display: ${({$display})=> $display || "block"} ;
 
   h2, h3 {
-    color: ${({ corTexto }) => corTexto || '#000'};
+    color: ${({ $corTexto }) => $corTexto || '#000'};
     font-size: 30px;
     margin-bottom: 5px;
   }
 
   p {
-    color: ${({ corTexto }) => corTexto || '#000'};
+    color: ${({ $corTexto }) => $corTexto || '#000'};
     margin: 10px 0;
     font-size: 18px;
+  }
+
+  @media(max-width:480px){
+     display: ${({$display})=> $display || "block"} ;
   }
 
 `;
@@ -56,8 +59,8 @@ const SocialIcons = styled.div`
     img {
       width: 30px;
       height: 30px;
-      filter: ${({ corTexto }) =>
-        corTexto === '#fff' ? 'brightness(0) invert(1)' : 'none'};
+      filter: ${({ $corTexto }) =>
+        $corTexto === '#fff' ? 'brightness(0) invert(1)' : 'none'};
     }
 
     &:hover {
@@ -72,28 +75,28 @@ const FooterBottom = styled.div`
   font-size: 14px;
   border-top: 1px solid rgba(68, 68, 68, 0.5);
   padding: 15px 0 10px;
-  color: ${({ corTexto }) => corTexto || '#000'};
+  color: ${({ $corTexto }) => $corTexto || '#000'};
 `;
 
-const Footer = ({ corTexto, corFundo }) => {
+const Footer = ({ $corTexto, $corFundo }) => {
   return (
-    <StyledFooter corFundo={corFundo}>
+    <StyledFooter $corFundo={$corFundo}>
       <FooterContainer>
-        <FooterSection $display="none" corTexto={corTexto}>
+        <FooterSection $display="none" $corTexto={$corTexto}>
           <h2>Barbearia Kenybarber</h2>
           <p>Os melhores cortes, produtos de qualidade e atendimento diferenciado. Venha nos visitar!</p>
         </FooterSection>
 
-        <FooterSection corTexto={corTexto}>
+        <FooterSection $corTexto={$corTexto}>
           <h3>Contato</h3>
           <p>📍 Entre em contato com a barbearia mais perto de você!</p>
           <p>📞 (41) 99999-9999</p>
           <p>✉️ contato@barbeariakenybarber.com</p>
         </FooterSection>
 
-        <FooterSection corTexto={corTexto}>
+        <FooterSection $corTexto={$corTexto}>
           <h3>Siga-nos</h3>
-          <SocialIcons corTexto={corTexto}>
+          <SocialIcons $corTexto={$corTexto}>
             <a href="#" target="_blank" rel="noopener noreferrer">
               <img src={Twitter} alt="X" />
             </a>

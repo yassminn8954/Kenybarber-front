@@ -7,24 +7,16 @@ import Logo from '../../assets/imagem/logo.png';
 
 const Container = styled.header`
   display: flex;
-  width: 100%;
+  width: 100vw;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
   color: white;
   background: transparent;
-  gap: 1rem;
   box-sizing: border-box;
   position: relative;
-  height: 10vh;
 
-  .logo {
-    display: flex;
-    align-items: center;
-    flex: 0 0 auto;
-  }
-
-  .center-logo {
+  .center-logo{
     display: none;
   }
 
@@ -32,18 +24,28 @@ const Container = styled.header`
     flex: 1;
     display: flex;
     justify-content: center;
-    gap: 10vh;
+    gap: 2px;
     align-items: center;
+
+    @media (min-width: 769px) {
+        justify-content: space-between;
+    }
+
   }
 
   nav a {
-    font-size: 26px;
+    font-size: 30px;
     color: white;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
     cursor: pointer;
     white-space: nowrap;
+  
+    @media (min-width: 769px) {
+     font-size: 20px;
+      
+    }
   }
 
   nav a:hover {
@@ -60,16 +62,9 @@ const Container = styled.header`
   }
 
   // Responsividade 
-  @media (max-width: 1024px) {
-    nav a {
-      font-size: 20px;
-      gap: 2vh;
-    }
-  }
 
   @media (max-width: 768px) {
-    padding: 10vw 10vw 5vw 10vw ;
-    gap: 0.5rem;
+    padding: 5vw 10vw 5vw 10vw ;
 
     .menu-btn {
       display: block;
@@ -77,7 +72,6 @@ const Container = styled.header`
       z-index: 25;
     }
 
-    /* ocultar ícones laterais e mostrar logo central */
     .logo,
     .right-logo {
       display: none;
@@ -91,8 +85,8 @@ const Container = styled.header`
   bottom: 0;
 
   display: flex;
-  justify-content: center; /* centraliza horizontal */
-  align-items: center;     /* centraliza vertical */
+  justify-content: center; 
+  align-items: center;
   z-index: 20;
   pointer-events: none;
 }
@@ -100,10 +94,9 @@ const Container = styled.header`
     nav {
       /* menu hamburguer */
       position: absolute;
-      top: calc(100% + 0.5rem);
       left: 0;
       right: 0;
-      margin: 0 0.5rem;
+      margin: 6vh;
       background: rgba(0, 0, 0, 0.95);
       border-radius: 8px;
       padding: 0.75rem;
@@ -142,14 +135,10 @@ const Cabecalho = () => {
 
   return (
     <Container $menuOpen={menuOpen}>
-      <div className="logo">
-        <Barbeirocoptero />
-      </div>
 
-     <div className="center-logo" aria-hidden={menuOpen ? "false" : "true"}>
-  <Imagem src={Logo} $width="105px" alt="Logo central" />
-</div>
-
+      <div className="center-logo" aria-hidden={menuOpen ? "false" : "true"}>
+        <Imagem src={Logo} $width="105px" alt="Logo central" />
+      </div> 
 
       <button
         className="menu-btn"
@@ -160,7 +149,9 @@ const Cabecalho = () => {
         {menuOpen ? "✕" : "☰"}
       </button>
 
+      
       <nav>
+        <Barbeirocoptero />
           <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#profissionais" onClick={() => setMenuOpen(false)}>Profissionais</a>
           <a href="#calendario" onClick={() => setMenuOpen(false)}>Calendário</a>
@@ -170,11 +161,8 @@ const Cabecalho = () => {
           <a onClick={() => handleNavigate("/cadastro")}>
             Usuário
           </a>
+          <Barbeirocoptero />
       </nav>
-
-      <div className="right-logo">
-        <Barbeirocoptero />
-      </div>
     </Container>
   );
 };

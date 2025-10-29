@@ -11,7 +11,6 @@ const StyledFooter = styled.footer`
   align-items: center;
   font-family: 'Judson', serif;
   background-color: ${({ corFundo }) => corFundo || 'rgba(0, 0, 0, 0.09)'};
-  padding: 30px 40px;
 `;
 
 const FooterContainer = styled.div`

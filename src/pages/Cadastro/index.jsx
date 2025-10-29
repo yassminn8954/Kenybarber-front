@@ -14,7 +14,7 @@ import CampoTexto from '../../Components/CampoTexto';
 
 export const Formulario = styled.div`
     background-color: #0c0b0b;
-    width: 35vw;
+    width: 35%;
     flex-direction: column;
     display: flex;
     align-items: center;

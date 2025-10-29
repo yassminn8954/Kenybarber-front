@@ -3,7 +3,7 @@ import { Search as SearchIcon } from "lucide-react";
 
 const Pesquisa = styled.input`
   padding: 12px 48px 12px 20px;
-  width: 800px;
+  width: 100%;
   height: 40px;
   background-color: #b9b9b9;
   border-radius: 20px;

@@ -7,7 +7,7 @@ import Logo from '../../assets/imagem/logo.png';
 
 const Container = styled.header`
   display: flex;
-  width: 100vw;
+  width: 60%;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
@@ -24,12 +24,8 @@ const Container = styled.header`
     flex: 1;
     display: flex;
     justify-content: center;
-    gap: 2px;
+    gap: 5vw;
     align-items: center;
-
-    @media (min-width: 769px) {
-        justify-content: space-between;
-    }
 
   }
 
@@ -41,11 +37,8 @@ const Container = styled.header`
     transition: color 0.3s;
     cursor: pointer;
     white-space: nowrap;
+
   
-    @media (min-width: 769px) {
-     font-size: 20px;
-      
-    }
   }
 
   nav a:hover {
@@ -63,12 +56,11 @@ const Container = styled.header`
 
   // Responsividade 
 
-  @media (max-width: 768px) {
-    padding: 5vw 10vw 5vw 10vw ;
+   @media (max-width: 768px) {
+    padding: 5vw 10vw;
 
     .menu-btn {
       display: block;
-      flex: 0 0 auto;
       z-index: 25;
     }
 
@@ -111,6 +103,9 @@ const Container = styled.header`
       font-size: 18px;
       padding: 0.5rem 0.75rem;
     }
+  }
+  @media (min-width: 769px) {
+    
   }
 `;
 

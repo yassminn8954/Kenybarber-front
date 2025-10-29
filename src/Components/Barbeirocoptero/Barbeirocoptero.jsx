@@ -11,11 +11,11 @@ const Giragira = styled.img`
   transition: width 0.2s ease;
 
   @media (min-width: 1024px) {
-    width: 48px;
+    width: 70px;
   }
 
   @media (min-width: 768px) {
-    width: 40px;
+    width: 60px;
     margin: 0.15rem;
   }
 `;

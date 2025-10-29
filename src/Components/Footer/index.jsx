@@ -1,4 +1,3 @@
-import React from 'react';  
 import styled from 'styled-components';
 import Instagram from '../../assets/sociais/instagram-icon.png';
 import Twitter from '../../assets/sociais/twitter-x.png';
@@ -15,17 +14,22 @@ const StyledFooter = styled.footer`
 
 const FooterContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   max-width: 1200px;
   font-family: 'Judson', serif;
   padding: 0 15px;
   gap: 80px 60px;
+
+  @media(max-width:480px){
+    gap: 5px;
+    margin-left: 30px;
+}
 `;
 
 const FooterSection = styled.div`
   flex: 1 1 250px;
   margin-bottom: 30px;
+  display: ${({$display})=> $display || "block"} ;
 
   h2, h3 {
     color: ${({ corTexto }) => corTexto || '#000'};
@@ -38,6 +42,7 @@ const FooterSection = styled.div`
     margin: 10px 0;
     font-size: 18px;
   }
+
 `;
 
 const SocialIcons = styled.div`
@@ -74,7 +79,7 @@ const Footer = ({ corTexto, corFundo }) => {
   return (
     <StyledFooter corFundo={corFundo}>
       <FooterContainer>
-        <FooterSection corTexto={corTexto}>
+        <FooterSection $display="none" corTexto={corTexto}>
           <h2>Barbearia Kenybarber</h2>
           <p>Os melhores cortes, produtos de qualidade e atendimento diferenciado. Venha nos visitar!</p>
         </FooterSection>

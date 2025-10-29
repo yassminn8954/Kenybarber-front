@@ -1,15 +1,15 @@
 import styled from 'styled-components';
-import Foto from '../../assets/imagem/logo.png'
 
 const FotoLogo = styled.img`
-    width: 250px;
-    margin-top: 30px;
+  width: ${({ $width }) => $width || "12vw"};
+  height: ${({ $height }) => $height || "auto"};
+  margin-top: ${({ $marginTop }) => $marginTop || "30px"};
+  transition: width 0.3s ease;
+   max-width: 40%;
 `;
 
-const Imagem = () => {
-  return (
-    <FotoLogo src={Foto} alt="Logo" />
-  );
-}
+const Imagem = ({ src, alt, ...props }) => {
+  return <FotoLogo src={src} alt={alt} {...props} />;
+};
 
 export default Imagem;

@@ -14,15 +14,15 @@ gap: 40px;
   `
 
 const Inicial = () => {
-    return(
+  return (
     <ContainerTodo>
-    <Cabecalho />
-    <BarraSearch />
-    <Carrossel />
-    <Sobre/>
-    <Footer/>
+        <Cabecalho />
+        <BarraSearch />
+        <Carrossel />
+        <Sobre />
+        <Footer />
     </ContainerTodo>
-    )
+  )
 }
 
 export default Inicial

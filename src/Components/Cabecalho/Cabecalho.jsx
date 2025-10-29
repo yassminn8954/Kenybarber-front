@@ -7,7 +7,7 @@ import Logo from '../../assets/imagem/logo.png';
 
 const Container = styled.header`
   display: flex;
-  width: 60%;
+  width: 90%;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
@@ -24,13 +24,17 @@ const Container = styled.header`
     flex: 1;
     display: flex;
     justify-content: center;
-    gap: 5vw;
+    gap: 8vw;
     align-items: center;
+
+    @media(max-width:1000px){
+      gap: 6vh;
+    }
 
   }
 
   nav a {
-    font-size: 30px;
+    font-size: 36px;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -38,6 +42,9 @@ const Container = styled.header`
     cursor: pointer;
     white-space: nowrap;
 
+    @media(max-width: 1000px){
+      font-size: 23px;
+    }
   
   }
 
@@ -50,7 +57,7 @@ const Container = styled.header`
     background: transparent;
     border: none;
     color: white;
-    font-size: 28px;
+    font-size: 30px;
     cursor: pointer;
   }
 
@@ -86,9 +93,9 @@ const Container = styled.header`
     nav {
       /* menu hamburguer */
       position: absolute;
+      top: 60px;
       left: 0;
       right: 0;
-      margin: 6vh;
       background: rgba(0, 0, 0, 0.95);
       border-radius: 8px;
       padding: 0.75rem;
@@ -97,10 +104,11 @@ const Container = styled.header`
       align-items: stretch;
       display: ${props => (props.$menuOpen ? "flex" : "none")};
       z-index: 15;
+
     }
 
     nav a {
-      font-size: 18px;
+      font-size: 20px;
       padding: 0.5rem 0.75rem;
     }
   }
@@ -146,17 +154,13 @@ const Cabecalho = () => {
 
       
       <nav>
-        <Barbeirocoptero />
+        <Barbeirocoptero $display={menuOpen ? "none" : "block"} />
           <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#profissionais" onClick={() => setMenuOpen(false)}>Profissionais</a>
           <a href="#calendario" onClick={() => setMenuOpen(false)}>Calendário</a>
-          <a onClick={() => handleNavigate("/locais")}>
-            Locais
-          </a>
-          <a onClick={() => handleNavigate("/cadastro")}>
-            Usuário
-          </a>
-          <Barbeirocoptero />
+          <a onClick={() => handleNavigate("/locais")}>Locais</a>
+          <a onClick={() => handleNavigate("/cadastro")}>Usuário</a>
+        <Barbeirocoptero $display={menuOpen ? "none" : "block"} />
       </nav>
     </Container>
   );

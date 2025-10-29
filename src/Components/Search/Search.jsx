@@ -3,7 +3,7 @@ import { Search as SearchIcon } from "lucide-react";
 
 const Pesquisa = styled.input`
   padding: 12px 48px 12px 20px;
-  width: 100%;
+  width: 800px;
   height: 40px;
   background-color: #b9b9b9;
   border-radius: 20px;
@@ -14,6 +14,11 @@ const Pesquisa = styled.input`
     color: rgba(0, 0, 0, 0.7);
     font-size: 20px;
     font-family: "Judson", serif;
+  }
+
+  @media(max-width:1000px) {
+    width: 86%;
+    margin-left: 2.8%;
   }
 
   @media (max-width: 768px) {
@@ -63,6 +68,11 @@ const IconWrapper = styled.div`
     height: 36px;
   }
 
+  @media(max-width:1000px) {
+      right: 30px;
+    
+  }
+
   @media (max-width: 768px) {
     right: 40px;
     svg { width: 28px; height: 28px; }
@@ -74,6 +84,7 @@ const IconWrapper = styled.div`
       display: none;
      }
   }
+  
 `;
 
 const SearchBar = () => {

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import Imagem from '../../assets/imagem/barber-pole.png';
 
-const Giragira = styled.img`
-  display: block;
+export const Giragira = styled.img`
+  display: ${({ $display }) => $display || "block"};
   flex: 0 0 auto;
   width: 56px; 
   height: auto;
@@ -20,10 +20,8 @@ const Giragira = styled.img`
   }
 `;
 
-const Barbeirocoptero = () => {
-  return (
-    <Giragira src={Imagem} alt="Logotipo barbeiro" />
-  );
+const Barbeirocoptero = ({ $display }) => {
+  return <Giragira src={Imagem} alt="Logotipo barbeiro" $display={$display} />;
 };
 
 export default Barbeirocoptero;

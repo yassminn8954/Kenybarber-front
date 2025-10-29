@@ -24,11 +24,11 @@ const Container = styled.header`
     flex: 1;
     display: flex;
     justify-content: center;
-    gap: 8vw;
+    gap: 5vw;
     align-items: center;
 
     @media(max-width:1000px){
-      gap: 6vh;
+      gap: 3vh;
     }
 
   }

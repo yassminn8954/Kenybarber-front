@@ -4,20 +4,18 @@ import Imagem from '../../assets/imagem/barber-pole.png';
 export const Giragira = styled.img`
   display: ${({ $display }) => $display || "block"};
   flex: 0 0 auto;
-  width: 56px; 
+  width: 80px; 
   height: auto;
   margin: 0.25rem; 
   object-fit: contain;
   transition: width 0.2s ease;
 
-  @media (min-width: 1024px) {
-    width: 70px;
+
+  @media (max-width: 1000px) {
+    width: 56px;
   }
 
-  @media (min-width: 768px) {
-    width: 60px;
-    margin: 0.15rem;
-  }
+ 
 `;
 
 const Barbeirocoptero = ({ $display }) => {

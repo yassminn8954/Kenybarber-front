@@ -22,7 +22,6 @@ const Pesquisa = styled.input`
   }
 
   @media (max-width: 768px) {
-    margin-left: 15px;
     padding: 10px 20px 10px 16px;
     &::placeholder { 
       font-size: 16px;

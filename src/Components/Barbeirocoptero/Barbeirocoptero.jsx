@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Imagem from '../../assets/imagem/barber-pole.png';
 
+<<<<<<< HEAD
 const Giragira = styled.img`
   display: block;
   flex: 0 0 auto;
@@ -21,6 +22,16 @@ const Giragira = styled.img`
 
   @media (max-width: 480px) {
     width: 32px;
+=======
+const Giragira = styled.figure`
+  width: 70px;
+  margin: 100px;
+  
+  img {
+    width: 100%; 
+    height: auto;
+    display: block;
+>>>>>>> 992437ae2fab086495204cbc90f32146d5959fba
   }
 `;
 

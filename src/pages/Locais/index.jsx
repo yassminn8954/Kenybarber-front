@@ -4,7 +4,7 @@ import Cards from "../../Components/Cards";
 import '../Inicial/Inicial.css';
 import Footer from "../../Components/Footer";
 
-const Fundo = styled.div`
+export const Fundo = styled.div`
   background-color: #000; 
   min-height: 100vh;
   min-width: 100vw;
@@ -12,7 +12,7 @@ const Fundo = styled.div`
   flex-direction: column; 
   align-items: center;   
   justify-content: flex-start; 
-  padding: 20px 0;        
+  padding: 20px 0;    
 `;
 
 const Locais = () => {

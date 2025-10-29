@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -16,7 +17,7 @@ const Button = styled.button`
   outline: none;
   transition: all 0.3s;
   user-select: none;
-  margin-bottom: 30px;
+  
 
   &:hover {
     box-shadow:
@@ -45,7 +46,7 @@ const Button = styled.button`
   }
 `;
 
-const Text = styled.span`
+export const Texto = styled.span`
   color: #f8c256;
   font-weight: 700;
   margin: auto;
@@ -53,12 +54,13 @@ const Text = styled.span`
   width: fit-content;
 `;
 
- const Botao=()=> {
+const Botao = ({texto} ) => {
+
   return (
-    <Button>
-      <Text className="text">Cadastrar</Text>
+    <Button type="submit">
+      <Texto>{texto}</Texto>
     </Button>
   );
-}
+};
 
-export default Botao
+export default Botao;

@@ -3,7 +3,7 @@ import Barbeirocoptero from "../Barbeirocoptero/Barbeirocoptero";
 
 
 const HeaderDeLocais = styled.header`
-  font-size: 32px;
+  font-size: 38px;
   background-color: #000;
   color: #fff;
   display: flex;

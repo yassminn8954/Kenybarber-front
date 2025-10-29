@@ -9,7 +9,7 @@ const ContainerCards = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
+  gap: 55px;
   padding: 40px;
   margin-bottom: 50px;
 `;
@@ -20,7 +20,7 @@ const Card = styled.div`
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
-  width: 420px;
+  width: 24%;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s;

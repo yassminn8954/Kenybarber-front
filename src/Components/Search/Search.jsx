@@ -4,12 +4,12 @@ import { Search as SearchIcon } from "lucide-react";
 const Pesquisa = styled.input`
   padding: 12px 48px 12px 20px;
   width: 100%;
-  height: 40px;
+  height: 55px;
   background-color: #b9b9b9;
   border-radius: 20px;
   outline: none;
   border: none;
-  
+
   &::placeholder {
     color: rgba(0, 0, 0, 0.7);
     font-size: 20px;
@@ -22,6 +22,7 @@ const Pesquisa = styled.input`
   }
 
   @media (max-width: 768px) {
+    height: 42px;
     padding: 10px 20px 10px 16px;
     &::placeholder { 
       font-size: 16px;
@@ -29,6 +30,7 @@ const Pesquisa = styled.input`
   }
 
   @media (max-width: 480px) {
+    height: 40px;
     padding: 8px 20px 8px 12px;
     &::placeholder { 
       font-size: 14px; 

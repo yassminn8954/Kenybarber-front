@@ -12,6 +12,11 @@ const ContainerCards = styled.div`
   gap: 55px;
   padding: 40px;
   margin-bottom: 50px;
+
+  @media(max-width:480px){
+    flex-direction: column;
+    gap: 40px;
+  }
 `;
 
 // Card individual
@@ -28,6 +33,10 @@ const Card = styled.div`
   &:hover {
     transform: translateY(-5px);
   }
+
+  @media(max-width:480px){
+    width: 100%;
+  }
 `;
 
 // Imagem do card
@@ -35,6 +44,7 @@ const CardImg = styled.img`
   width: 100%;
   height: 200px;
   object-fit: cover;
+
 `;
 
 // Corpo do card

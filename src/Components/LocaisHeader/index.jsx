@@ -9,12 +9,17 @@ const HeaderDeLocais = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  height: 90px;
+  gap: 30px;
+  height: 120px;
 
   width: 100%; 
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
+
+  @media(max-width:480px){
+    font-size:28px;
+    text-align: center;
+  }
 `;
 
 
@@ -22,7 +27,7 @@ const LocaisHeader=()=> {
     return (
         <>
         
-        <HeaderDeLocais><Barbeirocoptero/>Conheça nossas unidades<Barbeirocoptero/></HeaderDeLocais>   
+        <HeaderDeLocais><Barbeirocoptero/>Conheça nossas unidades parceiras!<Barbeirocoptero/></HeaderDeLocais>   
         
     </>)
 }

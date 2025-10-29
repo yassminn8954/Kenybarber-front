@@ -7,7 +7,7 @@ import Imagem4 from '../../assets/imagem/carrossel5.jpg';
 
 
 const CarouselContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   position: relative;
   overflow: hidden;
   margin: none;
@@ -31,6 +31,24 @@ const CarouselItem = styled.div`
     object-fit: cover;
     display: block;
     border-radius: 30px; 
+
+    @media(max-width: 1000px){
+      
+        height: 480px;
+      
+    }
+
+    @media(max-width: 768px){
+      
+        height: 350px;
+      
+    }
+
+    @media(max-width:480px){
+      
+        height: 250px;
+      
+    }
   }
 `;
 

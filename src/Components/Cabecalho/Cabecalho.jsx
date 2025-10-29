@@ -7,7 +7,7 @@ import Logo from '../../assets/imagem/logo.png';
 
 const Container = styled.header`
   display: flex;
-  
+  width: 100vw;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
@@ -112,9 +112,6 @@ const Container = styled.header`
       font-size: 20px;
       padding: 0.5rem 0.75rem;
     }
-  }
-  @media (min-width: 769px) {
-    
   }
 `;
 

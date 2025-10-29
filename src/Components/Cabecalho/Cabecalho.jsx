@@ -7,7 +7,7 @@ import Logo from '../../assets/imagem/logo.png';
 
 const Container = styled.header`
   display: flex;
-  width: 90%;
+  
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
@@ -21,10 +21,10 @@ const Container = styled.header`
   }
 
   nav {
-    flex: 1;
+   
     display: flex;
-    justify-content: center;
-    gap: 8vw;
+    justify-content:space-evenly;
+
     align-items: center;
 
     @media(max-width:1000px){
@@ -41,6 +41,7 @@ const Container = styled.header`
     transition: color 0.3s;
     cursor: pointer;
     white-space: nowrap;
+    justify-content:space-evenly
 
     @media(max-width: 1000px){
       font-size: 23px;

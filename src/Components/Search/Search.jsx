@@ -9,7 +9,7 @@ const Pesquisa = styled.input`
   border-radius: 20px;
   outline: none;
   border: none;
-
+  
   &::placeholder {
     color: rgba(0, 0, 0, 0.7);
     font-size: 20px;

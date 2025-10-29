@@ -4,7 +4,7 @@ import Imagem from '../../assets/imagem/barber-pole.png';
 export const Giragira = styled.img`
   display: ${({ $display }) => $display || "block"};
   flex: 0 0 auto;
-  width: 80px; 
+  width: 75px; 
   height: auto;
   margin: 0.25rem; 
   object-fit: contain;

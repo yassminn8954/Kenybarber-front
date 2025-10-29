@@ -15,6 +15,7 @@ const Container = styled.header`
   background: transparent;
   box-sizing: border-box;
   position: relative;
+  margin-bottom: 15px;
 
   .center-logo{
     display: none;
@@ -28,13 +29,13 @@ const Container = styled.header`
     align-items: center;
 
     @media(max-width:1000px){
-      gap: 6vh;
+      gap: 4vh;
     }
 
   }
 
   nav a {
-    font-size: 36px;
+    font-size: 30px;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -43,7 +44,7 @@ const Container = styled.header`
     white-space: nowrap;
 
     @media(max-width: 1000px){
-      font-size: 23px;
+      font-size: 22px;
     }
   
   }

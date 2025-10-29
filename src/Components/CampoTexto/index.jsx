@@ -11,6 +11,7 @@ const GapFormulario = styled.form`
   align-items: center;
   gap: 40px;
   display: flex;
+  width: 100%;
 `
 
 
@@ -22,16 +23,16 @@ export const StyledWrapper = styled.form`
   width: 80%; /* garante que o wrapper ocupe todo o espaço disponível */
   justify-content: center;
   align-items: center;
-  
+
 
   .input-container {
     position: relative;
-    width: 100%; /* ocupa toda a largura do pai */
+    width: 90%;
   }
 
   .input {
     padding: 10px;
-    height: 45px;
+    height: 40px;
     width: 100%; /* ocupa toda a largura do input-container */
     border-top: none;
     font-size: 16px;

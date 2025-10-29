@@ -13,20 +13,26 @@ const GapFormulario = styled.form`
   display: flex;
 `
 
-export const StyledWrapper = styled.div`
+
+
+export const StyledWrapper = styled.form`
   display: flex;
   flex-direction: column;
   gap: 40px;
+  width: 80%; /* garante que o wrapper ocupe todo o espaço disponível */
+  justify-content: center;
+  align-items: center;
+  
 
   .input-container {
     position: relative;
-    width: 500px; 
+    width: 100%; /* ocupa toda a largura do pai */
   }
 
   .input {
     padding: 10px;
-    height: 40px;
-    width: 500px;
+    height: 45px;
+    width: 100%; /* ocupa toda a largura do input-container */
     border-top: none;
     font-size: 16px;
     background: transparent;
@@ -34,7 +40,7 @@ export const StyledWrapper = styled.div`
     box-shadow: 1px 4px 0px 3px #aa8b43;
     transition: all 0.5s;
     color: #fff;
-   
+    border-radius: 4px;
   }
 
   .input:focus {
@@ -48,47 +54,54 @@ export const StyledWrapper = styled.div`
     opacity: 1;
   }
 
-  .input-container .top-line {
-    position: absolute;
-    content: "";
-    background-color: #8f805d;
-    width: 100%;
-    height: 2px;
-    right: 0;
-    top: 0;
-    transition: all 0.5s;
-  }
-
-  .input-container input:focus~.top-line {
-    width: 35%;
-    transition: all 0.5s;
-  }
-
+  /* Linhas animadas */
+  .input-container .top-line,
   .input-container .under-line {
     position: absolute;
     content: "";
     background-color: #8f805d;
-    width: 0%;
     height: 2px;
+    transition: all 0.5s;
+  }
+
+  .input-container .top-line {
+    width: 100%;
+    right: 0;
+    top: 0;
+  }
+
+  .input-container .under-line {
+    width: 0%;
     right: 0;
     bottom: 0;
-    transition: all 0.5s;
   }
 
-  .input-container input:focus~.under-line {
+  .input-container input:focus ~ .top-line {
+    width: 35%;
+  }
+
+  .input-container input:focus ~ .under-line {
     width: 100%;
-    transition: all 0.5s;
   }
 
-  .input-container input:focus~.label {
-    top: -10px;
-    transform: scale(1);
-    transition: all 0.5s;
-  }
-    .gap{
-    gap: 30px;
+  /* Responsividade opcional */
+  @media (max-width: 768px) {
+    gap: 25px;
+    .input {
+      height: 40px;
+      font-size: 15px;
     }
+  }
+
+  @media (max-width: 480px) {
+    gap: 20px;
+    .input {
+      height: 38px;
+      font-size: 14px;
+    }
+  }
 `;
+
 const Paragrafo=styled.p`
 color:#fff;`
 const Link=styled.a`

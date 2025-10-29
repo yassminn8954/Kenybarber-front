@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 
 const Button = styled.button`
@@ -17,7 +16,6 @@ const Button = styled.button`
   outline: none;
   transition: all 0.3s;
   user-select: none;
-  
 
   &:hover {
     box-shadow:
@@ -38,7 +36,7 @@ const Button = styled.button`
       inset 0px 12px 12px -6px #c99240,
       inset 12px 0px 12px -6px #bb7c1d,
       inset -12px 0px 12px -6px #a77e0f,
-      -1px -1px 6px 0px #4e4017,;
+      -1px -1px 6px 0px #4e4017;
 
     .text {
       transform: scale(0.8);
@@ -46,7 +44,7 @@ const Button = styled.button`
   }
 `;
 
-export const Texto = styled.span`
+const Texto = styled.span`
   color: #f8c256;
   font-weight: 700;
   margin: auto;
@@ -54,10 +52,9 @@ export const Texto = styled.span`
   width: fit-content;
 `;
 
-const Botao = ({texto} ) => {
-
+const Botao = ({ texto, tipo = "button" }) => {
   return (
-    <Button type="submit">
+    <Button type={tipo}>
       <Texto>{texto}</Texto>
     </Button>
   );

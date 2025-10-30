@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Logo from '../../assets/imagem/logo.png'
 
 const FotoLogo = styled.img`
   width: ${({ $width }) => $width || "12vw"};
@@ -8,8 +9,8 @@ const FotoLogo = styled.img`
    max-width: 40%;
 `;
 
-const Imagem = ({ src, alt, ...props }) => {
-  return <FotoLogo src={src} alt={alt} {...props} />;
+const Imagem = ({ alt, ...props }) => {
+  return <FotoLogo src={Logo} alt={alt} {...props} />;
 };
 
 export default Imagem;

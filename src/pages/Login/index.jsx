@@ -31,9 +31,7 @@ const Login = () => {
 
   return (
     <Fundo>
-      {/* Se Formulario for um div, troque para <form> real aqui */}
       <Formulario $height="35vw">
-        {/* Garante um <form> real por dentro */}
         <form onSubmit={handleLogin} style={{ display: "contents" }}>
           <Imagem />
           <StyledWrapper>

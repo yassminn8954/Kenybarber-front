@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Erro404 from "./Components/Erro404";
 import Calendario from "./pages/Calendario";
 import Usuarios from "./pages/adm";
+import ListaBarbeiros from "./Components/ListaBarbeiros";
 
 const App = () => {
   return (
@@ -17,8 +18,11 @@ const App = () => {
          <Route path="/login" element={<Login />} />
          <Route path="/calendario" element={<Calendario />} />
         <Route path="/locais" element={<Locais />} />
-        <Route path="/admin" element={<Usuarios />} />
         <Route path="*" element={<Erro404 />} />
+        
+
+        <Route path="/admin" element={<Usuarios />} />
+        <Route path="/barbeiros" element={<ListaBarbeiros />} />
       </Routes>
     </BrowserRouter>
   );

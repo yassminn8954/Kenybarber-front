@@ -172,7 +172,7 @@ const CampoTexto = () => {
           <div className="top-line" />
           <div className="under-line" />
         </div>
-         <Botao texto="Cadastrar" destino="/login" tipo="submit" />
+         <Botao texto="Cadastrar" destino="/login"  />
           <Paragrafo >Já possui login? <Link href="http://localhost:5173/login"> clique aqui</Link></Paragrafo>
       </GapFormulario>
     </StyledWrapper>

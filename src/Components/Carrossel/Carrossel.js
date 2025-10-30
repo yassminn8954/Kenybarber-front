@@ -1,12 +1,10 @@
-import { useState } from "react";
 import styled from "styled-components";
 import Imagem1 from '../../assets/imagem/carrossel2.jpg';
 import Imagem2 from '../../assets/imagem/carrossel3.png';
 import Imagem3 from '../../assets/imagem/carrossel4.jpg';
 import Imagem4 from '../../assets/imagem/carrossel5.jpg';
 
-
-const CarouselContainer = styled.div`
+export const CarouselContainer = styled.div`
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -14,14 +12,14 @@ const CarouselContainer = styled.div`
 `;
 
 
-const CarouselInner = styled.div`
+export const CarouselInner = styled.div`
   display: flex;
   height: 100%;
   transition: transform 0.5s ease;
   transform: translateX(${props => -props.$currentIndex * 100}vw);
 `;
 
-const CarouselItem = styled.div`
+export const CarouselItem = styled.div`
   flex: 0 0 100vw;
 
 
@@ -52,7 +50,7 @@ const CarouselItem = styled.div`
   }
 `;
 
-const NavButton = styled.button`
+export const NavButton = styled.button`
   position: absolute;
   top: 260px;
   transform: translateY(-50%);
@@ -72,35 +70,7 @@ const NavButton = styled.button`
   }
 `;
 
-const PrevButton = styled(NavButton)` left: 20px; `;
-const NextButton = styled(NavButton)` right: 20px; `;
+export const PrevButton = styled(NavButton)` left: 20px; `;
+export const NextButton = styled(NavButton)` right: 20px; `;
 
-const images = [Imagem1, Imagem2, Imagem3, Imagem4];
-
-const Carrossel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const prevSlide = () => {
-    setCurrentIndex(prev => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex(prev => (prev === images.length - 1 ? 0 : prev + 1));
-  };
-
-  return (
-    <CarouselContainer>
-      <CarouselInner $currentIndex={currentIndex}>
-        {images.map((img, idx) => (
-          <CarouselItem key={idx}>
-            <img src={img} alt={`Slide ${idx + 1}`} />
-          </CarouselItem>
-        ))}
-      </CarouselInner>
-      <PrevButton onClick={prevSlide}>‹</PrevButton>
-      <NextButton onClick={nextSlide}>›</NextButton>
-    </CarouselContainer>
-  );
-};
-
-export default Carrossel;
+export const images = [Imagem1, Imagem2, Imagem3, Imagem4];

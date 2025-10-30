@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Barbeirocoptero from "../Barbeirocoptero/Barbeirocoptero";
+import Barbeirocoptero from "../Barbeirocoptero";
 
 
 const HeaderDeLocais = styled.header`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Search as SearchIcon } from "lucide-react";
 
-const Pesquisa = styled.input`
+
+export const Pesquisa = styled.input`
   padding: 12px 48px 12px 20px;
   width: 100%;
   height: 55px;
@@ -38,7 +38,7 @@ const Pesquisa = styled.input`
   }
 `;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
@@ -54,7 +54,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const IconWrapper = styled.div`
+export const IconWrapper = styled.div`
   position: absolute;
   right: 16px;
   top: 50%;
@@ -87,19 +87,3 @@ const IconWrapper = styled.div`
   }
   
 `;
-
-const SearchBar = () => {
-  return (
-    <Wrapper>
-      <Pesquisa
-        type="text"
-        placeholder="Buscar barbeiro, corte, local, calendário..."
-      />
-      <IconWrapper>
-        <SearchIcon />
-      </IconWrapper>
-    </Wrapper>
-  );
-};
-
-export default SearchBar;

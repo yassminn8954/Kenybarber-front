@@ -16,6 +16,7 @@
     "@fullcalendar/react": "^6.1.19",
     "@fullcalendar/resource-timeline": "^6.1.19",
     "axios": "^1.13.1",
+    "framer-motion": "^12.23.24",
     "fullcalendar": "^6.1.19",
     "fullcalendar-scheduler": "^6.1.19",
     "lucide-react": "^0.545.0",

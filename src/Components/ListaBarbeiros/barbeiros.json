@@ -1,0 +1,26 @@
+[
+  {
+    "imagem": "Abel.png",
+    "nome": "Abel",
+    "endereco": "Avenida Brasil, São Paulo-SP",
+    "telefone": "(42) 96845-5227"
+  },
+  {
+    "imagem": "Pedro.png",
+    "nome": "Pedro",
+    "endereco": "Avenida São Sebastião, São Mateus do Sul-PR",
+    "telefone": "(42) 96845-5227"
+  },
+  {
+    "imagem": "Gustavo.png",
+    "nome": "Gustavo",
+    "endereco": "Avenida Manoel Ribas, nº 5049, Centro-União da Vitória-PR",
+    "telefone": "(42) 96845-5227"
+  },
+  {
+    "imagem": "Alessandro.jpeg",
+    "nome": "Alessandro",
+    "endereco": "Avenida Manoel Ribas, nº 5049, Centro-União da Vitória-PR",
+    "telefone": "(42) 96845-5227"
+  }
+]

@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import styled from "styled-components";
 import { Fundo } from "../../pages/Cadastro";
 import LadoCalendario from "./LadoCalendario";
+import styled, { keyframes } from 'styled-components';
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const CalendarWrapper = styled.div`
-  display: flex;
   gap: 20px;
   padding: 25px;
   background-color: #ffffff;
@@ -17,6 +24,7 @@ const CalendarWrapper = styled.div`
   margin: 20px auto;
   box-sizing: border-box;
   align-items: flex-start;
+  animation: ${fadeIn}2s ease-in ;
 
   // calendario ocupa o espaço disponível 
   .calendar {
@@ -99,7 +107,8 @@ const DisplayCalendario=()=> {
     }
   };
 
-  return (<Fundo>
+  return (
+  <Fundo>
     <CalendarWrapper>
       <div className="calendar">
         <FullCalendar

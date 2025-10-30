@@ -8,6 +8,8 @@ import Erro404 from "./Components/Erro404";
 import Calendario from "./pages/Calendario";
 
 const App=()=> {
+import Usuarios from "./pages/adm";
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -16,7 +18,8 @@ const App=()=> {
          <Route path="/login" element={<Login />} />
          <Route path="/calendario" element={<Calendario />} />
         <Route path="/locais" element={<Locais />} />
-        <Route path="*" element={<Erro404/>} />
+        <Route path="/admin" element={<Usuarios />} />
+        <Route path="*" element={<Erro404 />} />
       </Routes>
     </BrowserRouter>
   );

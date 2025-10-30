@@ -3,7 +3,7 @@ import Botao from '../../Components/Botao'
 import styled from 'styled-components';
 import CampoTexto from '../../Components/CampoTexto';
 
- const Fundo = styled.div`
+ export const Fundo = styled.div`
   height: 90vh;
   width: 100vw;
   background-color: #000;

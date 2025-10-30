@@ -155,7 +155,7 @@ const Cabecalho = () => {
         <Barbeirocoptero $display={menuOpen ? "none" : "block"} />
           <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#profissionais" onClick={() => setMenuOpen(false)}>Profissionais</a>
-          <a href="#calendario" onClick={() => setMenuOpen(false)}>Calendário</a>
+          <a onClick={() => handleNavigate("/calendario")}>Calendário</a>
           <a onClick={() => handleNavigate("/locais")}>Locais</a>
           <a onClick={() => handleNavigate("/cadastro")}>Usuário</a>
         <Barbeirocoptero $display={menuOpen ? "none" : "block"} />

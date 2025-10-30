@@ -6,9 +6,8 @@ import Locais from "./pages/Locais";
 import Login from "./pages/Login";
 import Erro404 from "./Components/Erro404";
 import Calendario from "./pages/Calendario";
-
-const App=()=> {
 import Usuarios from "./pages/adm";
+
 const App = () => {
   return (
     <BrowserRouter>

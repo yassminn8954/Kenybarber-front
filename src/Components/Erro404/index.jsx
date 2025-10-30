@@ -1,22 +1,19 @@
 import styled from 'styled-components';
-import imagem404 from '../../assets/imagem/404.png.png'; // sua imagem
+import Imagem404 from '../../assets/imagem/404.png.png'; 
+import { Fundo } from '../../pages/Cadastro';
 
-const FullScreen = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: url(${imagem404}) no-repeat center center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 3rem;
-  text-shadow: 2px 2px 5px #000;
-`;
+const Img404=styled.img`
+    width: 60%;
+    height: auto;
+    display: block;
+`
+
 
 export default function Erro404() {
   return (
-    <FullScreen/>
+    <Fundo $backgroundcolor="#432819 ">
+      <Img404 src={Imagem404}/>
+      </Fundo>
      
   );
 }

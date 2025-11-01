@@ -1,27 +1,43 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
-import { Fundo } from "../../pages/Cadastro";
-import { 
-  Card, CardBody, CardEndereco, CardImg, 
-  CardTelefone, CardTitle, ContainerCards 
+import {
+  Card,
+  CardBody,
+  CardEndereco,
+  CardImg,
+  CardTelefone,
+  CardTitle,
+  ContainerCards
 } from "../Cards";
 import barbeiros from "./barbeiros.json";
-import DisplayCalendario from "../DisplayCalendario"; // ajuste o caminho conforme seu projeto
+import DisplayCalendario from "../DisplayCalendario";
+
+// 🔹 Novo fundo só para esta tela
+const FundoLista = styled.div`
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 60px 40px;
+  box-sizing: border-box;
+`;
 
 const Barbeiros = styled.div`
   width: 28%;
-  height: auto;
   padding: 20px;
-  background-color: #97781C;
+  background-color: #97781c;
   border-radius: 25px;
-  margin-top: 300px;
-  margin-right: 0;
 `;
 
 const CalendarioContainer = styled(motion.div)`
-  width: 70%;
-  margin-left: 0;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
 const ListaBarbeiros = () => {
@@ -32,7 +48,7 @@ const ListaBarbeiros = () => {
   };
 
   return (
-    <Fundo style={{ display: "flex" }}>
+    <FundoLista>
       <Barbeiros>
         <ContainerCards $gap="30px">
           {barbeiros.map((barbeiro, index) => (
@@ -46,7 +62,12 @@ const ListaBarbeiros = () => {
             >
               <CardImg
                 $width="30%"
-                src={new URL(`../../assets/barbeiros/${barbeiro.imagem}`, import.meta.url).href}
+                src={
+                  new URL(
+                    `../../assets/barbeiros/${barbeiro.imagem}`,
+                    import.meta.url
+                  ).href
+                }
                 alt={barbeiro.nome}
               />
               <CardBody>
@@ -55,7 +76,10 @@ const ListaBarbeiros = () => {
                   {barbeiro.nome} <br />
                   {barbeiro.endereco}
                 </CardEndereco>
-                <CardTelefone $color="#fff" href={`tel:${barbeiro.telefone}`}>
+                <CardTelefone
+                  $color="#fff"
+                  href={`tel:${barbeiro.telefone}`}
+                >
                   {barbeiro.telefone}
                 </CardTelefone>
               </CardBody>
@@ -64,20 +88,20 @@ const ListaBarbeiros = () => {
         </ContainerCards>
       </Barbeiros>
 
-      <AnimatePresence>
-        {PickBarbeiro && (
-          <CalendarioContainer
-            key={PickBarbeiro.nome}
-            initial={{ opacity: 0, x: 300 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 300 }}
-            transition={{ duration: 0.6, ease: "easeIn" }}
-          >
-            <DisplayCalendario barbeiro={PickBarbeiro} />
-          </CalendarioContainer>
-        )}
-      </AnimatePresence>
-    </Fundo>
+      <AnimatePresence mode="wait">
+  {PickBarbeiro && (
+    <CalendarioContainer
+      key={PickBarbeiro.nome}
+      initial={{ opacity: 0, x: 200 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -200 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
+      <DisplayCalendario barbeiro={PickBarbeiro} />
+    </CalendarioContainer>
+  )}
+</AnimatePresence>
+    </FundoLista>
   );
 };
 

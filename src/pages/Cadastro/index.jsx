@@ -3,12 +3,16 @@ import Botao from '../../Components/Botao'
 import styled from 'styled-components';
 import CampoTexto from '../../Components/CampoTexto';
 
- export const Fundo = styled.div`
+export const Fundo = styled.div`
+  min-height: ${({ $minheight }) => $minheight || "auto"};
   width: 100vw;
-  background-color: ${({$backgroundcolor})=> $backgroundcolor || "#000"} ;
+  background-color: ${({ $backgroundcolor }) => $backgroundcolor || "#000"};
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: ${({ $justify }) => $justify || "center"};
+  align-items: ${({ $alignitems }) => $alignitems || "center"};
+  flex-direction: ${({ $flexdirection }) => $flexdirection || "row"};
+  padding: ${({ $padding }) => $padding || "0"};
+  gap: ${({ $gap }) => $gap || "0"};
 `;
 
 export const Formulario = styled.div`

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Fundo } from "../../pages/Cadastro";
 import LadoCalendario from "./LadoCalendario";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -7,7 +7,6 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import { CalendarWrapper } from "./DisplayCAlendario.js";
 import styled from "styled-components";
 
-// 🔹 Novo título estilizado
 const TituloArea = styled.div`
   text-align: center;
   color: #fff;
@@ -25,18 +24,59 @@ const TituloArea = styled.div`
   }
 `;
 
-const DisplayCalendario = ({ barbeiro }) => {
-  const [eventos, setEventos] = useState([
-    { title: "Reunião inicial", date: "2025-10-30" },
-  ]);
+const DisplayCalendario = ({ barbeiro, tipoUsuario = "barbeiro" }) => {
+  const [disponibilidade, setDisponibilidade] = useState({});
+  const [calendarApi, setCalendarApi] = useState(null);
 
+  const cores = ["verde", "amarelo", "vermelho", null];
+  const coresHex = {
+    verde: "#4CAF50",
+    amarelo: "#FFEB3B",
+    vermelho: "#F44336",
+  };
+
+  // ✅ alterna a cor ao clicar
   const handleDateClick = (info) => {
-    const titulo = prompt("Digite o nome do evento:");
-    if (titulo) {
-      const novoEvento = { title: titulo, date: info.dateStr };
-      setEventos([...eventos, novoEvento]);
+    if (tipoUsuario !== "barbeiro") return; // cliente não pode alterar
+
+    const atual = disponibilidade[info.dateStr];
+    const proximaCor =
+      cores[(cores.indexOf(atual) + 1) % cores.length]; // alterna no ciclo
+
+    setDisponibilidade((prev) => ({
+      ...prev,
+      [info.dateStr]: proximaCor,
+    }));
+  };
+
+  // ✅ Pinta toda a célula (td)
+  const renderDia = (info) => {
+    const estado = disponibilidade[info.dateStr];
+    const cor = coresHex[estado] || "";
+
+    const cell = info.el.closest(".fc-daygrid-day");
+    if (cell) {
+      cell.style.backgroundColor = cor;
+      cell.style.transition = "background-color 0.3s ease";
+      cell.style.borderRadius = "6px";
+      cell.style.color = estado ? "#000" : "";
     }
   };
+
+  // ✅ Reaplica as cores toda vez que o estado mudar
+  useEffect(() => {
+    if (!calendarApi) return;
+    const cells = document.querySelectorAll(".fc-daygrid-day");
+    cells.forEach((cell) => {
+      const date = cell.getAttribute("data-date");
+      const estado = disponibilidade[date];
+      const cor = coresHex[estado] || "";
+      cell.style.backgroundColor = cor;
+      cell.style.transition = "background-color 0.3s ease";
+      cell.style.borderRadius = "6px";
+      cell.style.color = estado ? "#000" : "";
+    });
+  }, [disponibilidade, calendarApi]);
 
   return (
     <Fundo style={{ flexDirection: "column", padding: "40px 0" }}>
@@ -50,12 +90,15 @@ const DisplayCalendario = ({ barbeiro }) => {
           <FullCalendar
             plugins={[dayGridPlugin, interactionPlugin]}
             initialView="dayGridMonth"
-            events={eventos}
-            dateClick={handleDateClick}
             locale="pt-br"
-            selectable={true}
-            editable={true}
             height="auto"
+            dateClick={handleDateClick}
+            dayCellDidMount={renderDia}
+            selectable={tipoUsuario === "barbeiro"}
+            editable={tipoUsuario === "barbeiro"}
+            ref={(el) => {
+              if (el && !calendarApi) setCalendarApi(el.getApi());
+            }}
             headerToolbar={{
               left: "prev,next",
               center: "title",
@@ -64,7 +107,8 @@ const DisplayCalendario = ({ barbeiro }) => {
           />
         </div>
 
-        <LadoCalendario />
+        <LadoCalendario tipoUsuario={tipoUsuario} />
+
       </CalendarWrapper>
     </Fundo>
   );

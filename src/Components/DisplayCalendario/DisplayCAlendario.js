@@ -15,11 +15,12 @@ export const CalendarWrapper = styled.div`
   padding: 25px;
   background-color: #ffffff;
   border-radius: 24px;
-  max-width: 55%;
+  max-width: 100%;
   margin: 20px auto;
   box-sizing: border-box;
   align-items: flex-start;
   animation: ${fadeIn}2s ease-in ;
+  display: flex;
 
   // calendario ocupa o espaço disponível 
   .calendar {
@@ -44,7 +45,7 @@ export const CalendarWrapper = styled.div`
 
   // barra lateral 
   .side {
-    width: 260px;
+    width: 150px;
     margin-top: 65px;
     background-color: #aca4a4;
     border-radius: 12px;

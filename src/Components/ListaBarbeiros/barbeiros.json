@@ -2,24 +2,32 @@
   {
     "imagem": "Abel.png",
     "nome": "Abel",
+    "redeimagem": "instagram-colorido.png",
+    "rede": "abel_zwz",
     "endereco": "Avenida Brasil, São Paulo-SP",
     "telefone": "(42) 96845-5227"
   },
   {
     "imagem": "Pedro.png",
     "nome": "Pedro",
+    "redeimagem": "instagram-colorido.png",
+    "rede": "p_edroneto",
     "endereco": "Avenida São Sebastião, São Mateus do Sul-PR",
     "telefone": "(42) 96845-5227"
   },
   {
     "imagem": "Gustavo.png",
     "nome": "Gustavo",
+    "redeimagem": "instagram-colorido.png",
+    "rede": "gustavo_vieir2",
     "endereco": "Avenida Manoel Ribas, nº 5049, Centro-União da Vitória-PR",
     "telefone": "(42) 96845-5227"
   },
   {
     "imagem": "Alessandro.jpeg",
     "nome": "Alessandro",
+    "redeimagem": "instagram-colorido.png",
+    "rede": "alessandro.zientara",
     "endereco": "Avenida Manoel Ribas, nº 5049, Centro-União da Vitória-PR",
     "telefone": "(42) 96845-5227"
   }

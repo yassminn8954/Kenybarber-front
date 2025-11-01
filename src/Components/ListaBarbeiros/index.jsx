@@ -24,6 +24,14 @@ const FundoLista = styled.div`
   gap: 40px;
   padding: 60px 40px;
   box-sizing: border-box;
+
+  /* Responsivo: em telas menores, coluna em vez de linha */
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 30px;
+  }
 `;
 
 const Barbeiros = styled.div`
@@ -31,6 +39,10 @@ const Barbeiros = styled.div`
   padding: 20px;
   background-color: #97781c;
   border-radius: 25px;
+
+  @media (max-width: 1024px) {
+    width: 80%; /* ocupa mais espaço na tela menor */
+  }
 `;
 
 const CalendarioContainer = styled(motion.div)`
@@ -38,6 +50,10 @@ const CalendarioContainer = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  @media (max-width: 1024px) {
+    width: 90%; /* ocupa quase toda a largura em tela pequena */
+  }
 `;
 
 const ListaBarbeiros = () => {
@@ -72,8 +88,16 @@ const ListaBarbeiros = () => {
               />
               <CardBody>
                 <CardTitle $color="#fff">{barbeiro.nome}</CardTitle>
-                <CardEndereco $color="#fff">
-                  {barbeiro.nome} <br />
+                 <CardEndereco $color="#fff">
+                  <img
+                    src={new URL(`../../assets/sociais/${barbeiro.redeimagem}`, import.meta.url).href}
+                    width={20}
+                    height={20}
+                    style={{ marginRight: "5px", verticalAlign: "middle" }}
+                  />
+                  {/* Nome de usuário da rede social */}
+                  {barbeiro.rede} <br />
+                  {/* Endereço do barbeiro */}
                   {barbeiro.endereco}
                 </CardEndereco>
                 <CardTelefone
@@ -89,18 +113,18 @@ const ListaBarbeiros = () => {
       </Barbeiros>
 
       <AnimatePresence mode="wait">
-  {PickBarbeiro && (
-    <CalendarioContainer
-      key={PickBarbeiro.nome}
-      initial={{ opacity: 0, x: 200 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -200 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-    >
-      <DisplayCalendario barbeiro={PickBarbeiro} />
-    </CalendarioContainer>
-  )}
-</AnimatePresence>
+        {PickBarbeiro && (
+          <CalendarioContainer
+            key={PickBarbeiro.nome}
+            initial={{ opacity: 0, x: 200 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -200 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <DisplayCalendario barbeiro={PickBarbeiro} />
+          </CalendarioContainer>
+        )}
+      </AnimatePresence>
     </FundoLista>
   );
 };

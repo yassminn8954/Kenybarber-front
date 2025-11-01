@@ -7,13 +7,21 @@ export const GapFormulario = styled.form`
   gap: 40px;
   display: flex;
   width: 100%;
+
+  @media(max-width: 7680px){
+    gap: 26px;
+    
+  }
+   @media(max-width: 480px){
+    gap: 22px;
+  }
 `
 
 export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 80%; /* garante que o wrapper ocupe todo o espaço disponível */
+  width: 90%; // garante que o wrapper ocupe todo o espaço disponível 
   justify-content: center;
   align-items: center;
 
@@ -24,17 +32,28 @@ export const StyledWrapper = styled.div`
   }
 
   .input {
-    padding: 10px;
+    padding: 10px 0 10px 5px;
     height: 40px;
-    width: 100%; /* ocupa toda a largura do input-container */
+    width: 100%; // ocupa toda a largura do input-container 
     border-top: none;
-    font-size: 16px;
     background: transparent;
     outline: none;
-    box-shadow: 1px 4px 0px 3px #aa8b43;
+    box-shadow: 1px 3px 1px 2px #aa8b43;
     transition: all 0.5s;
     color: #fff;
     border-radius: 4px;
+
+    @media (max-width: 1024px) {
+      box-shadow: 1px 3px 0px 2px #aa8b43;
+    }
+
+     @media (max-width: 768px) {
+      box-shadow: 0px 2px 1px 1px #aa8b43;
+    }
+
+    @media (max-width: 480px) {
+      box-shadow: 0px 2px 1px 1px #aa8b43;
+    }
   }
 
   .input:focus {
@@ -46,6 +65,10 @@ export const StyledWrapper = styled.div`
     color: #e0dab4a4;
     font-size: 18px;
     opacity: 1;
+
+    @media (max-width: 480px) {
+      font-size: 16px;
+    }
   }
 
   /* Linhas animadas */
@@ -78,7 +101,6 @@ export const StyledWrapper = styled.div`
     width: 100%;
   }
 
-  /* Responsividade opcional */
   @media (max-width: 768px) {
     gap: 25px;
     .input {
@@ -97,6 +119,7 @@ export const StyledWrapper = styled.div`
 `;
 
 export const Paragrafo=styled.p`
+margin-bottom: 20px;
 color:#fff;`
 
 export const Link=styled.a`

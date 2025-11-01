@@ -6,7 +6,16 @@ const FotoLogo = styled.img`
   height: ${({ $height }) => $height || "auto"};
   margin-top: ${({ $marginTop }) => $marginTop || "30px"};
   transition: width 0.3s ease;
-   max-width: 40%;
+   max-width: 35%;
+
+   @media (max-width: 1024px) {
+    width: 150px;
+    }
+
+   @media (max-width: 768px) {
+    width: 130px;
+    }
+
 `;
 
 const Imagem = ({ alt, ...props }) => {

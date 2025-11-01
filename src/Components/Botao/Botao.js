@@ -16,6 +16,11 @@ export const Button = styled.button`
   outline: none;
   transition: all 0.3s;
   user-select: none;
+  margin-bottom:${({$marginbottom})=>$marginbottom||"30px"};
+
+   @media (max-width: 768px){
+    padding: 12px 28px;
+  }
 
   &:hover {
     box-shadow:
@@ -50,4 +55,13 @@ export const Texto = styled.span`
   margin: auto;
   transition: all 0.3s;
   width: fit-content;
+
+  @media (max-width:768px){
+    font-size: 18px;
+  }
+
+  @media (max-width:480px){
+    font-size: 16px;
+  }
+
 `;

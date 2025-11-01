@@ -31,7 +31,7 @@ const Login = () => {
 
   return (
     <Fundo>
-      <Formulario $height="35vw">
+      <Formulario >
         <form onSubmit={handleLogin} style={{ display: "contents" }}>
           <Imagem />
           <StyledWrapper>

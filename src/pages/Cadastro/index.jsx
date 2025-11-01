@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import CampoTexto from '../../Components/CampoTexto';
 
  export const Fundo = styled.div`
-  height: 100vh;
   width: 100vw;
   background-color: ${({$backgroundcolor})=> $backgroundcolor || "#000"} ;
   display: flex;
@@ -22,16 +21,33 @@ export const Formulario = styled.div`
     box-shadow: 0px 0px 5px 6px #4d3d19;
     gap: 30px;
     border-radius: 4px;
-    height: ${({ $height }) => $height || '45vw'} ;
+    height: auto ;
+    
+
+    @media (max-width: 1024px) {
+      width: 60%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      width: 60%;
+      height: auto;
+      ;
+    }
+
+    @media (max-width: 480px) {
+      width: 70%;
+      height: auto;
+    }
+
 `;
 
 const Cadastro = () => {
   return (
     <Fundo>
       <Formulario>
-        <Imagem />
-        <CampoTexto /> 
-    
+        <Imagem $marginTop="20px"/>
+        <CampoTexto />
       </Formulario>
     </Fundo>
   );

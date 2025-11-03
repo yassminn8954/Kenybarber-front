@@ -15,20 +15,20 @@ const Footer = ({ $corTexto, $corFundo }) => {
         <FooterSection $corTexto={$corTexto}>
           <h3>Contato</h3>
           <p>📍 Entre em contato com a barbearia mais perto de você!</p>
-          <p>📞 (41) 99999-9999</p>
-          <p>✉️ contato@barbeariakenybarber.com</p>
+          <a href='https://www.whatsapp.com/?lang=pt_BR'>📞 (41) 99999-9999</a>
+          <a href='https://workspace.google.com/intl/pt-BR/gmail/'>✉️ contato@barbeariakenybarber.com</a>
         </FooterSection>
 
         <FooterSection $corTexto={$corTexto}>
           <h3>Siga-nos</h3>
           <SocialIcons $corTexto={$corTexto}>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/?lang=pt">
               <img src={Twitter} alt="X" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/" >
               <img src={Instagram} alt="Instagram" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.whatsapp.com/?lang=pt_BR">
               <img src={Whatsapp} alt="WhatsApp" />
             </a>
           </SocialIcons>

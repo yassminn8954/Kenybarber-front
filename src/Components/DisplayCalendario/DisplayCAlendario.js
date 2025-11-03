@@ -6,13 +6,13 @@ export const TituloArea = styled.div`
   margin-bottom: 20px;
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #f5c542;
     margin: 5px 0;
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.6rem;
     color: #ccc;
   }
 
@@ -37,7 +37,7 @@ export const TituloArea = styled.div`
 
 export const CalendarBox = styled.div`
   width: 100%;
-  height: 500px;
+  height: 700px;
   background-color: #fff;
   border-radius: 16px;
   overflow: hidden;
@@ -62,10 +62,17 @@ export const CalendarBox = styled.div`
     margin: 0px;
 }
 
+@media (max-width: 1024px) {
+    max-width: 95%;
+    height: 60%;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
 
   @media (max-width: 768px) {
     max-width: 95%;
-    height: auto;
+    height: 50%;
     padding: 12px;
     border-radius: 12px;
 
@@ -128,7 +135,7 @@ export const CalendarWrapper = styled.div`
     padding: 10px;
     box-sizing: border-box;
     overflow: hidden;
-    min-height: 370px;
+    min-height: 40px;
   }
 
   .calendar .fc {

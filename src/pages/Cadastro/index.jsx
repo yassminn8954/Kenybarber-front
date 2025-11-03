@@ -4,58 +4,54 @@ import styled from 'styled-components';
 import CampoTexto from '../../Components/CampoTexto';
 
 export const Fundo = styled.div`
-  min-height: ${({ $minheight }) => $minheight || "auto"};
+  min-height: 100vh; /* 🔹 ocupa a tela inteira */
   width: 100%;
   background-color: ${({ $backgroundcolor }) => $backgroundcolor || "#000"};
   display: flex;
-  justify-content: ${({ $justify }) => $justify || "center"};
-  align-items: ${({ $alignitems }) => $alignitems || "center"};
-  flex-direction: ${({ $flexdirection }) => $flexdirection || "row"};
-  padding: ${({ $padding }) => $padding || "0"};
-  gap: ${({ $gap }) => $gap || "0"};
+  justify-content: center; /* 🔹 centraliza horizontalmente */
+  align-items: center;     /* 🔹 centraliza verticalmente */
+  flex-direction: column;  /* ou row, se quiser imagem ao lado */
+  padding: 20px;
   box-sizing: border-box;
-  overflow-x: hidden; // impede o calendário de “escapar” lateralmente */
+  overflow: auto; /* 🔹 evita corte em telas pequenas */
 `;
 
 export const Formulario = styled.div`
-    background-color: #0c0b0b;
-    width: 35%;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 5px 6px #4d3d19;
-    gap: 30px;
-    border-radius: 4px;
-    height: auto ;
-    
+  background-color: #0c0b0b;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 5px 6px #4d3d19;
+  gap: 30px;
+  border-radius: 8px;
+  padding: 40px 20px; /* 🔹 dá espaço interno */
+  box-sizing: border-box;
+  height: auto;
 
-    @media (max-width: 1024px) {
-      width: 60%;
-      height: auto;
-    }
+  @media (max-width: 1024px) {
+    width: 60%;
+  }
 
-    @media (max-width: 768px) {
-      width: 60%;
-      height: auto;
-      ;
-    }
+  @media (max-width: 768px) {
+    width: 70%;
+  }
 
-    @media (max-width: 480px) {
-      width: 70%;
-      height: auto;
-    }
-
+  @media (max-width: 480px) {
+    width: 85%;
+  }
 `;
 
 const Cadastro = () => {
   return (
     <Fundo>
       <Formulario>
-        <Imagem $marginTop="20px"/>
+        <Imagem $marginTop="20px" />
         <CampoTexto />
       </Formulario>
     </Fundo>
   );
 }
-export default Cadastro
+
+export default Cadastro;

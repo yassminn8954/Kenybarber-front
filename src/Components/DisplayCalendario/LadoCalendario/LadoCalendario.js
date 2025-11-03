@@ -9,18 +9,18 @@ export const Side = styled.aside`
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
   max-width: 420px;
-  width: 300px;
+  width: 400px;
   height: 100%;
   transition: all 0.3s ease;
 
   h2 {
-    font-size: 18px;
+    font-size: 24px;
     color: #222;
     margin-bottom: 10px;
   }
 
   h3 {
-    font-size: 16px;
+    font-size: 18px;
     color: #222;
     margin: 15px 0 8px 0;
   }
@@ -28,7 +28,8 @@ export const Side = styled.aside`
   p {
     margin: 0 0 10px 0;
     color: #444;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 700;
   }
 
   a {
@@ -76,7 +77,7 @@ export const Legenda = styled.div`
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
     flex-wrap: wrap;
   }

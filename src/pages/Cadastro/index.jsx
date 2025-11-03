@@ -5,7 +5,7 @@ import CampoTexto from '../../Components/CampoTexto';
 
 export const Fundo = styled.div`
   min-height: ${({ $minheight }) => $minheight || "auto"};
-  width: 100vw;
+  width: 100%;
   background-color: ${({ $backgroundcolor }) => $backgroundcolor || "#000"};
   display: flex;
   justify-content: ${({ $justify }) => $justify || "center"};
@@ -13,6 +13,8 @@ export const Fundo = styled.div`
   flex-direction: ${({ $flexdirection }) => $flexdirection || "row"};
   padding: ${({ $padding }) => $padding || "0"};
   gap: ${({ $gap }) => $gap || "0"};
+  box-sizing: border-box;
+  overflow-x: hidden; // impede o calendário de “escapar” lateralmente */
 `;
 
 export const Formulario = styled.div`

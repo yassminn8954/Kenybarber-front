@@ -1,90 +1,38 @@
-import styled, { keyframes } from 'styled-components';
-
-
-export const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+import styled from "styled-components";
 
 export const CalendarWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 25px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 24px;
-  max-width: 100%;
-  margin: 20px auto;
+  width: 100%;
   box-sizing: border-box;
+  justify-content: center;
   align-items: flex-start;
-  animation: ${fadeIn}2s ease-in ;
-  display: flex;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-  // calendario ocupa o espaço disponível 
+@media (max-width: 480px) {
+  padding: 10px;
+  border-radius: 15px;
+}
+
+  /* ---------- CALENDÁRIO ---------- */
   .calendar {
-    flex: 1 1 0;
-    min-width: 0;
+    flex: 1 1 600px;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border-radius: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    min-height: 370px;
   }
 
-  // estilo interno do FullCalendar 
-  .fc {
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
-  }
-
-  .fc-day-today {
-    background: #e8f4ff !important;
-  }
-
-  .fc-toolbar-title {
-    color: #333;
-    font-size: 1.25rem;
-  }
-
-  // barra lateral 
-  .side {
-    width: 150px;
-    margin-top: 65px;
-    background-color: #aca4a4;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    padding: 20px 16px 30px 16px;
-    flex: 0 0 260px;
-  }
-
-  @media (max-width: 1024px) {
-    max-width: 95%;
-    padding: 18px;
-    gap: 16px;
-
-    .side {
-      width: 220px;
-      flex: 0 0 220px;
-      padding: 12px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 14px;
-    .side {
-    margin: 10px auto;
-      width: 90%;
-      flex: none;
-    }
-  }
-
-  @media (max-width: 480px) {
-    flex-direction: column;
-    padding: 14px;
-    .side {
-    margin: 10px auto;
-      width: 90%;
-      flex: none;
-    }
-  }
-`;
-
-
+  .calendar .fc {
+    width: 100% !important;
+    box-sizing: border-box;
+  }`

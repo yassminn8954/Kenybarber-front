@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -8,12 +8,27 @@ import {
   CardImg,
   CardTelefone,
   CardTitle,
-  ContainerCards
+  ContainerCards,
 } from "../Cards";
 import barbeiros from "./barbeiros.json";
 import DisplayCalendario from "../DisplayCalendario";
 
-// 🔹 Novo fundo só para esta tela
+// ✅ Hook responsivo — breakpoint principal: 1024px
+const useIsMobile = (breakpoint = 1024) => {
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth <= breakpoint : false
+  );
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= breakpoint);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [breakpoint]);
+
+  return isMobile;
+};
+
+// ✅ Estilos principais
 const FundoLista = styled.div`
   min-height: 100vh;
   width: 100%;
@@ -22,109 +37,191 @@ const FundoLista = styled.div`
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  padding: 60px 40px;
   box-sizing: border-box;
+  padding: 40px; /* base equilibrada */
+  overflow-x: hidden; /* evita bug visual */
 
-  /* Responsivo: em telas menores, coluna em vez de linha */
+  @media (max-width: 1920px) {
+    gap: 35px;
+    padding: 35px;
+  }
+
   @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
-    padding: 40px 20px;
     gap: 30px;
+    padding: 25px 15px; /* 🔹 menos padding horizontal */
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 12px;
+    gap: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px 8px;
+    gap: 15px;
   }
 `;
 
 const Barbeiros = styled.div`
-  width: 28%;
-  padding: 20px;
+  width: 40%;
   background-color: #97781c;
   border-radius: 25px;
+  padding: 16px;               
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 
   @media (max-width: 1024px) {
-    width: 80%; /* ocupa mais espaço na tela menor */
+    width: 90%;
+    padding: 14px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 10px;
   }
 `;
+
 
 const CalendarioContainer = styled(motion.div)`
   width: 60%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+
+  @media (max-width: 1920px) {
+    width: 65%;
+  }
 
   @media (max-width: 1024px) {
-    width: 90%; /* ocupa quase toda a largura em tela pequena */
+    width: 100%;
+    justify-content: center;
   }
 `;
 
+// ✅ Componente principal
 const ListaBarbeiros = () => {
   const [PickBarbeiro, setPickBarbeiro] = useState(null);
+  const isMobile = useIsMobile(1024);
 
   const handleClick = (barbeiro) => {
-    setPickBarbeiro(barbeiro);
+    setPickBarbeiro((prev) =>
+      prev?.nome === barbeiro.nome ? null : barbeiro
+    );
   };
 
   return (
     <FundoLista>
       <Barbeiros>
-        <ContainerCards $gap="30px">
+        <ContainerCards
+          $gap="30px"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
           {barbeiros.map((barbeiro, index) => (
-            <Card
+            <div
               key={index}
-              $flexdirection="row"
-              $backgroundcolor="#000"
-              $width="100%"
-              onClick={() => handleClick(barbeiro)}
-              style={{ cursor: "pointer" }}
+              style={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
             >
-              <CardImg
-                $width="30%"
-                src={
-                  new URL(
-                    `../../assets/barbeiros/${barbeiro.imagem}`,
-                    import.meta.url
-                  ).href
-                }
-                alt={barbeiro.nome}
-              />
-              <CardBody>
-                <CardTitle $color="#fff">{barbeiro.nome}</CardTitle>
-                 <CardEndereco $color="#fff">
-                  <img
-                    src={new URL(`../../assets/sociais/${barbeiro.redeimagem}`, import.meta.url).href}
-                    width={20}
-                    height={20}
-                    style={{ marginRight: "5px", verticalAlign: "middle" }}
-                  />
-                  {/* Nome de usuário da rede social */}
-                  {barbeiro.rede} <br />
-                  {/* Endereço do barbeiro */}
-                  {barbeiro.endereco}
-                </CardEndereco>
-                <CardTelefone
-                  $color="#fff"
-                  href={`tel:${barbeiro.telefone}`}
+              <Card
+                  $flexdirection="row"
+                  $backgroundcolor="#000"
+                  $width="100%" /* 🔹 Ajuste: ocupa o container inteiro */
+                  onClick={() => handleClick(barbeiro)}
+                  style={{ cursor: "pointer" }}
                 >
-                  {barbeiro.telefone}
-                </CardTelefone>
-              </CardBody>
-            </Card>
+                <CardImg
+                  $width="30%"
+                  src={
+                    new URL(
+                      `../../assets/barbeiros/${barbeiro.imagem}`,
+                      import.meta.url
+                    ).href
+                  }
+                  alt={barbeiro.nome}
+                />
+                <CardBody>
+                  <CardTitle $color="#fff">{barbeiro.nome}</CardTitle>
+                  <CardEndereco $color="#fff">
+                    <img
+                      src={new URL(
+                        `../../assets/sociais/${barbeiro.redeimagem}`,
+                        import.meta.url
+                      ).href}
+                      width={20}
+                      height={20}
+                      style={{
+                        marginRight: "5px",
+                        verticalAlign: "middle",
+                      }}
+                    />
+                    {barbeiro.rede} <br />
+                    {barbeiro.endereco}
+                  </CardEndereco>
+                  <CardTelefone
+                    $color="#fff"
+                    href={`tel:${barbeiro.telefone}`}
+                  >
+                    {barbeiro.telefone}
+                  </CardTelefone>
+                </CardBody>
+              </Card>
+
+              {/* 🔹 Calendário aparece logo abaixo do card correspondente no mobile */}
+              {isMobile && PickBarbeiro?.nome === barbeiro.nome && (
+                <motion.div
+                  key={barbeiro.nome + "-calendar"}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                  style={{
+                    marginTop: "10px",
+                    borderRadius: "15px",
+                    overflow: "hidden",
+                    width: "100%",
+                    backgroundColor: "#111",
+                    padding: "10px 0",
+                  }}
+                >
+                  <DisplayCalendario barbeiro={barbeiro} />
+                </motion.div>
+              )}
+            </div>
           ))}
         </ContainerCards>
       </Barbeiros>
 
-      <AnimatePresence mode="wait">
-        {PickBarbeiro && (
-          <CalendarioContainer
-            key={PickBarbeiro.nome}
-            initial={{ opacity: 0, x: 200 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -200 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            <DisplayCalendario barbeiro={PickBarbeiro} />
-          </CalendarioContainer>
-        )}
-      </AnimatePresence>
+      {/* 🔹 Fora do card, apenas no desktop */}
+      {!isMobile && (
+        <AnimatePresence mode="wait">
+          {PickBarbeiro && (
+            <CalendarioContainer
+              key={PickBarbeiro.nome}
+              initial={{ opacity: 0, x: 200 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -200 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <DisplayCalendario barbeiro={PickBarbeiro} />
+            </CalendarioContainer>
+          )}
+        </AnimatePresence>
+      )}
     </FundoLista>
   );
 };

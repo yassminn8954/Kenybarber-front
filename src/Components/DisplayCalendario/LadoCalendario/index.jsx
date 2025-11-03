@@ -3,11 +3,14 @@ import styled from "styled-components";
 const Side = styled.aside`
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background-color: #d6d1d1;
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
+  padding: 16px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  max-width: 420px;
+  width: 100%;
+  transition: all 0.3s ease;
 
   h2 {
     font-size: 18px;
@@ -19,7 +22,6 @@ const Side = styled.aside`
     font-size: 16px;
     color: #222;
     margin: 15px 0 8px 0;
-    line-height: 18px;
   }
 
   p {
@@ -37,6 +39,30 @@ const Side = styled.aside`
   a:hover {
     text-decoration: underline;
   }
+
+  /* ---------- RESPONSIVIDADE ---------- */
+  @media (max-width: 1024px) {
+    max-width: 360px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+    padding: 16px;
+    h2 { font-size: 16px; }
+    h3 { font-size: 15px; }
+    p { font-size: 13px; }
+  }
+
+  @media (max-width: 480px) {
+    max-width: 85%;
+    padding: 14px;
+    text-align: center;
+
+    h2 { font-size: 15px; }
+    h3 { font-size: 14px; }
+    p { font-size: 12px; }
+    a { font-size: 13px; }
+  }
 `;
 
 const Legenda = styled.div`
@@ -51,6 +77,7 @@ const Legenda = styled.div`
     gap: 8px;
     font-size: 14px;
     color: #333;
+    flex-wrap: wrap;
   }
 
   span {
@@ -58,11 +85,18 @@ const Legenda = styled.div`
     height: 20px;
     border-radius: 4px;
   }
+
+  @media (max-width: 480px) {
+    div {
+      justify-content: center;
+      font-size: 15px;
+    }
+  }
 `;
 
 const LadoCalendario = ({ tipoUsuario = "cliente" }) => {
   return (
-    <Side className="side">
+    <Side>
       <h2>Informações</h2>
 
       {tipoUsuario === "cliente" ? (
@@ -73,7 +107,11 @@ const LadoCalendario = ({ tipoUsuario = "cliente" }) => {
           </p>
           <hr />
           <h3>Converse com o barbeiro para agendar:</h3>
-          <a href="https://wa.me/5542982379328" target="_blank" rel="noreferrer">
+          <a
+            href="https://wa.me/5542982379328"
+            target="_blank"
+            rel="noreferrer"
+          >
             📞 (42) 98237-9328
           </a>
 

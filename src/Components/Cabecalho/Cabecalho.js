@@ -10,8 +10,7 @@ export const Container = styled.header`
   background: transparent;
   box-sizing: border-box;
   position: relative;
-  margin-bottom: 15px;
-
+  
   .center-logo{
     display: none;
   }

@@ -30,10 +30,12 @@ export const CarouselItem = styled.div`
     display: block;
     border-radius: 30px; 
 
-    @media(max-width: 1000px){
-      
-        height: 480px;
-      
+    @media(max-width: 1920px){
+        height: 450px;
+    }
+
+    @media(max-width: 1024px){
+        height: 370px;
     }
 
     @media(max-width: 768px){

@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 // Container geral dos cards
 export const ContainerCards = styled.div`
+  width: 100vw;
+  flex-direction: column; /* empilha os cards */
+  gap: ${({ $gap }) => $gap || "16px"};
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -28,24 +32,38 @@ export const ContainerCards = styled.div`
 
 // Card individual
 export const Card = styled.div`
-  background-color: ${({$backgroundcolor}) => $backgroundcolor|| "#c7c4c4"} ;
+  background-color: ${({ $backgroundcolor }) => $backgroundcolor || "#c7c4c4"};
   border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: ${({$width})=> $width|| "24%" } ;
+  width: ${({ $width }) => $width || "100%"};
+  max-width: ${({ $maxwidth }) => $maxwidth || "100%"};
   display: flex;
-  flex-direction: ${({$flexdirection})=>$flexdirection|| "column"};
+  flex-direction: ${({ $flexdirection }) => $flexdirection || "column"};
   transition: transform 0.3s;
-
-  @media(max-width:480px){
-    height: 160px;
-  }
+  box-sizing: border-box;
+  flex-shrink: 0; /* 🔹 Impede o flex de encolher o card */
+  flex-grow: 0;   /* 🔹 Impede o flex de expandir o card */
+  flex-basis: ${({ $width }) => $width || "auto"}; /* 🔹 Usa o width como base */
+  cursor: pointer;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: scale(1.02);
   }
 
-  
+  @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    border-radius: 16px;
+  }
 `;
 
 // Imagem do card
@@ -55,7 +73,11 @@ export const CardImg = styled.img`
   object-fit: cover;
 
   @media (max-width:1024px){
-    height: 250px;
+    height: 320px;
+  }
+
+   @media (max-width:768px){
+    height: auto;
   }
 
 `;
@@ -73,6 +95,10 @@ export const CardTitle = styled.h2`
   font-size: 30px;
   color: ${({$color})=> $color || "#4E3118"};
 
+  @media (max-width:768px){
+    font-size: 24px;
+  }
+
   &:hover{
     color: #976132;
   }
@@ -84,6 +110,10 @@ export const CardEndereco = styled.p`
   color: ${({$color})=> $color || "#4E3118"};
   line-height: 1.4;
   font-weight: 400;
+
+  @media (max-width:768px){
+    font-size: 16px;
+  }
 `;
 
 // Telefone
@@ -92,6 +122,10 @@ export const CardTelefone = styled.a`
   font-weight: 400;
   color: ${({$color})=> $color || "#4E3118"};     
   text-decoration: none; 
+
+   @media (max-width:768px){
+    font-size: 16px;
+  }
   
   &:hover {
     text-decoration: underline; 

@@ -16,9 +16,10 @@ export const Pesquisa = styled.input`
     font-family: "Judson", serif;
   }
 
-  @media(max-width:1000px) {
+  @media(max-width:1920px) {
     width: 86%;
     margin-left: 2.8%;
+    height: 35px;
   }
 
   @media (max-width: 768px) {
@@ -69,7 +70,7 @@ export const IconWrapper = styled.div`
     height: 36px;
   }
 
-  @media(max-width:1000px) {
+  @media(max-width:1920px) {
       right: 40px;
     
   }

@@ -48,6 +48,7 @@ export const SobreCard = styled.div`
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s;
 
    @media(max-width: 1600px){
       width: 460px;
@@ -79,6 +80,10 @@ export const SobreCard = styled.div`
     font-size: 16px;
     font-weight: 400;
   }
+  }
+
+  &:hover{ 
+    transform: scale(1.1);
   }
 
   &::before {

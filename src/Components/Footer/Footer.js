@@ -45,6 +45,12 @@ export const FooterSection = styled.div`
     font-size: 18px;
   }
 
+  a{
+    font-size: 16px;
+    text-decoration: underline;
+    color: #000;
+  }
+
   @media(max-width:768px){
      display: ${({$display})=> $display || "block"} ;
   }

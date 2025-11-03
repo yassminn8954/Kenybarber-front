@@ -6,7 +6,6 @@ import Imagem from "../Imagem";
 import Logo from '../../assets/imagem/logo.png';
 
 
-
 const Cabecalho = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);

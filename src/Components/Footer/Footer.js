@@ -18,6 +18,11 @@ export const FooterContainer = styled.div`
   padding: 0 15px;
   gap: 80px 60px;
 
+  @media(max-width:768px){
+    gap: 0;
+    margin-left: 30px;
+}
+
   @media(max-width:480px){
     gap: 5px;
     margin-left: 30px;
@@ -40,7 +45,7 @@ export const FooterSection = styled.div`
     font-size: 18px;
   }
 
-  @media(max-width:480px){
+  @media(max-width:768px){
      display: ${({$display})=> $display || "block"} ;
   }
 

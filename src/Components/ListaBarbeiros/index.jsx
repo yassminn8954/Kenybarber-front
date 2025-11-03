@@ -13,7 +13,7 @@ import {
 import barbeiros from "./barbeiros.json";
 import DisplayCalendario from "../DisplayCalendario";
 
-// ✅ Hook responsivo — breakpoint principal: 1024px
+// Hook responsivo — principal: 1024px
 const useIsMobile = (breakpoint = 1024) => {
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth <= breakpoint : false
@@ -28,7 +28,7 @@ const useIsMobile = (breakpoint = 1024) => {
   return isMobile;
 };
 
-// ✅ Estilos principais
+// Estilos principais
 const FundoLista = styled.div`
   min-height: 100vh;
   width: 100%;
@@ -49,8 +49,8 @@ const FundoLista = styled.div`
   @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    padding: 25px 15px; /* 🔹 menos padding horizontal */
+    gap: 35px;
+    padding: 25px 15px; //menos padding horizontal 
   }
 
   @media (max-width: 768px) {
@@ -65,8 +65,8 @@ const FundoLista = styled.div`
 `;
 
 const Barbeiros = styled.div`
-  width: 40%;
-  background-color: #97781c;
+  width: 30%;
+  background-color: #cd9a28;
   border-radius: 25px;
   padding: 16px;               
   box-sizing: border-box;
@@ -75,7 +75,7 @@ const Barbeiros = styled.div`
   gap: 18px;
 
   @media (max-width: 1024px) {
-    width: 90%;
+    width: 65%;
     padding: 14px;
   }
 
@@ -104,7 +104,6 @@ const CalendarioContainer = styled(motion.div)`
   }
 `;
 
-// ✅ Componente principal
 const ListaBarbeiros = () => {
   const [PickBarbeiro, setPickBarbeiro] = useState(null);
   const isMobile = useIsMobile(1024);
@@ -140,12 +139,12 @@ const ListaBarbeiros = () => {
               <Card
                   $flexdirection="row"
                   $backgroundcolor="#000"
-                  $width="100%" /* 🔹 Ajuste: ocupa o container inteiro */
+                  $width="100%" /* Ajuste: ocupa o container inteiro */
                   onClick={() => handleClick(barbeiro)}
                   style={{ cursor: "pointer" }}
                 >
                 <CardImg
-                  $width="30%"
+                  $width="25%"
                   src={
                     new URL(
                       `../../assets/barbeiros/${barbeiro.imagem}`,

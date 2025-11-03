@@ -86,7 +86,7 @@ export const Container = styled.header`
 }
 
     nav {
-      /* menu hamburguer */
+      // menu hamburguer 
       position: absolute;
       top: 60px;
       left: 0;

@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-
 // Container geral dos cards
 export const ContainerCards = styled.div`
   width: 100vw;
-  flex-direction: column; /* empilha os cards */
+  flex-direction: column;
   gap: ${({ $gap }) => $gap || "16px"};
   box-sizing: border-box;
   display: flex;
@@ -16,7 +15,7 @@ export const ContainerCards = styled.div`
 
   @media(max-width: 1024px){
     gap: 30px;
-    padding: 50px;
+    padding: 30px;
   }
 
    @media(max-width:768px){
@@ -42,9 +41,9 @@ export const Card = styled.div`
   flex-direction: ${({ $flexdirection }) => $flexdirection || "column"};
   transition: transform 0.3s;
   box-sizing: border-box;
-  flex-shrink: 0; /* 🔹 Impede o flex de encolher o card */
-  flex-grow: 0;   /* 🔹 Impede o flex de expandir o card */
-  flex-basis: ${({ $width }) => $width || "auto"}; /* 🔹 Usa o width como base */
+  flex-shrink: 0; //impede o flex de encolher o card 
+  flex-grow: 0;   //impede o flex de expandir o card 
+  flex-basis: ${({ $width }) => $width || "auto"}; // Usa o width como base 
   cursor: pointer;
 
   &:hover {
@@ -69,15 +68,19 @@ export const Card = styled.div`
 // Imagem do card
 export const CardImg = styled.img`
   width: ${({$width})=> $width|| "100%"};
-  height: 200px;
+  height: 210px;
   object-fit: cover;
 
+  @media (max-width:1920px){
+    height: 220px;
+  }
+
   @media (max-width:1024px){
-    height: 320px;
+    height: 250px;
   }
 
    @media (max-width:768px){
-    height: auto;
+    height: 220px;
   }
 
 `;
@@ -92,8 +95,10 @@ export const CardBody = styled.div`
 
 // Título
 export const CardTitle = styled.h2`
-  font-size: 30px;
+  font-size: 34px;
+  font-weight: 400;
   color: ${({$color})=> $color || "#4E3118"};
+
 
   @media (max-width:768px){
     font-size: 24px;
@@ -106,7 +111,7 @@ export const CardTitle = styled.h2`
 
 // Endereço
 export const CardEndereco = styled.p`
-  font-size: 18px;
+  font-size: 22px;
   color: ${({$color})=> $color || "#4E3118"};
   line-height: 1.4;
   font-weight: 400;
@@ -137,4 +142,6 @@ export const CardTelefone = styled.a`
     color: #4E3118;
   }
 `;
+
+
 

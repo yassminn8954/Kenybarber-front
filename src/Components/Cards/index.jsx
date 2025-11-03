@@ -13,11 +13,11 @@ import {
 
 export * from "./Cards.js";
 
-// 🔹 Container com linha de 3 cards
+// Container com linha de 3 cards
 export const LocaisContainer = styled(ContainerCards)`
   width: 80%;
+  display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
   gap: 30px;
@@ -25,6 +25,14 @@ export const LocaisContainer = styled(ContainerCards)`
   @media (max-width: 1024px) {
     justify-content: center;
     gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    width: 60%;
+  }
+
+  @media (max-width: 480px) {
+    width: 75%;
   }
 `;
 
@@ -57,7 +65,7 @@ export const LocaisCardImg = styled(BaseCardImg)`
   }
 
   @media (max-width: 768px) {
-    height: 180px;
+    height: 230px;
   }
 
   @media (max-width: 480px) {

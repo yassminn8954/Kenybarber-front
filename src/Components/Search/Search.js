@@ -23,6 +23,8 @@ export const Pesquisa = styled.input`
   }
 
   @media (max-width: 768px) {
+    margin-top: 25px;
+    margin-left: 3%;
     height: 42px;
     padding: 10px 20px 10px 16px;
     &::placeholder { 
@@ -31,6 +33,7 @@ export const Pesquisa = styled.input`
   }
 
   @media (max-width: 480px) {
+    margin-top: 30px;
     height: 40px;
     padding: 8px 20px 8px 12px;
     &::placeholder { 
@@ -71,13 +74,17 @@ export const IconWrapper = styled.div`
   }
 
   @media(max-width:1920px) {
+    top: 30px;
       right: 40px;
     
   }
 
   @media (max-width: 768px) {
-    right: 55px;
-    svg { width: 28px; height: 28px; }
+    right: 8%;
+    top: 65%;
+    svg { 
+      width: 30px; 
+      height: 35px; }
   }
 
   @media (max-width: 480px) {

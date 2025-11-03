@@ -21,7 +21,7 @@ export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 90%; // garante que o wrapper ocupe todo o espaço disponível 
+  width: 90%; 
   justify-content: center;
   align-items: center;
 
@@ -34,7 +34,7 @@ export const StyledWrapper = styled.div`
   .input {
     padding: 10px 0 10px 5px;
     height: 40px;
-    width: 100%; // ocupa toda a largura do input-container 
+    width: 100%; 
     border-top: none;
     background: transparent;
     outline: none;
@@ -71,7 +71,7 @@ export const StyledWrapper = styled.div`
     }
   }
 
-  /* Linhas animadas */
+  // Linhas animadas 
   .input-container .top-line,
   .input-container .under-line {
     position: absolute;

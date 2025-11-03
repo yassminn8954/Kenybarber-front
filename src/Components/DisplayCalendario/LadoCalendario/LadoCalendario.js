@@ -41,7 +41,7 @@ export const Side = styled.aside`
     text-decoration: underline;
   }
 
-  /* ---------- RESPONSIVIDADE ---------- */
+  // ---------- RESPONSIVIDADE ---------- 
   @media (max-width: 1024px) {
     max-width: 360px;
   }

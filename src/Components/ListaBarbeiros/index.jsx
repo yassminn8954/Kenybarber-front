@@ -38,8 +38,8 @@ const FundoLista = styled.div`
   align-items: flex-start;
   gap: 40px;
   box-sizing: border-box;
-  padding: 40px; /* base equilibrada */
-  overflow-x: hidden; /* evita bug visual */
+  padding: 40px;
+  overflow-x: hidden; 
 
   @media (max-width: 1920px) {
     gap: 35px;
@@ -50,7 +50,7 @@ const FundoLista = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 35px;
-    padding: 25px 15px; //menos padding horizontal 
+    padding: 25px 15px; 
   }
 
   @media (max-width: 768px) {
@@ -139,7 +139,7 @@ const ListaBarbeiros = () => {
               <Card
                   $flexdirection="row"
                   $backgroundcolor="#000"
-                  $width="100%" /* Ajuste: ocupa o container inteiro */
+                  $width="100%" 
                   onClick={() => handleClick(barbeiro)}
                   style={{ cursor: "pointer" }}
                 >
@@ -180,7 +180,7 @@ const ListaBarbeiros = () => {
                 </CardBody>
               </Card>
 
-              {/* 🔹 Calendário aparece logo abaixo do card correspondente no mobile */}
+              {/* Calendário aparece logo abaixo do card correspondente no mobile */}
               {isMobile && PickBarbeiro?.nome === barbeiro.nome && (
                 <motion.div
                   key={barbeiro.nome + "-calendar"}
@@ -205,7 +205,7 @@ const ListaBarbeiros = () => {
         </ContainerCards>
       </Barbeiros>
 
-      {/* 🔹 Fora do card, apenas no desktop */}
+      {/* Fora do card, apenas no desktop */}
       {!isMobile && (
         <AnimatePresence mode="wait">
           {PickBarbeiro && (

@@ -66,7 +66,7 @@ const DisplayCalendario = ({ barbeiro, tipoUsuario = "cliente" }) => {
             plugins={[dayGridPlugin, interactionPlugin]}
             initialView="dayGridMonth"
             locale="pt-br"
-            height="100%" // força usar 100% da altura da box
+            height="100%" 
             contentHeight="100%"
             expandRows={true}
             dateClick={handleDateClick}

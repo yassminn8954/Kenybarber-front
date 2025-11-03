@@ -90,7 +90,7 @@ export const SobreCard = styled.div`
     content: '';
     position: absolute;
     width: 70px;
-    background-image: linear-gradient(180deg, rgba(160, 19, 19, 1), rgba(0, 38, 252, 1));
+    background-image: linear-gradient(180deg, #d11c22ff, rgba(0, 38, 252, 1));
     height: 190%;
     animation: rotBGimg 20s linear infinite;
     transition: all 0.2s linear;

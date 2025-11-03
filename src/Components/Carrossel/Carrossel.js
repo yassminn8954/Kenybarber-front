@@ -25,14 +25,10 @@ export const CarouselItem = styled.div`
 
   img {
     width: 100%;
-    height: 650px;
+    height: 550px;
     object-fit: cover;
     display: block;
     border-radius: 30px; 
-
-    @media(max-width: 1920px){
-        height: 450px;
-    }
 
     @media(max-width: 1024px){
         height: 370px;
@@ -46,7 +42,7 @@ export const CarouselItem = styled.div`
 
     @media(max-width:480px){
       
-        height: 250px;
+        height: 280px;
       
     }
   }

@@ -43,9 +43,10 @@ export const Container = styled.header`
   
   }
 
-  nav a:hover {
-    color: #ffcc00;
-  }
+  nav a:hover,
+nav a.active {     /* ↖ adiciona a classe active aqui */
+  color: #ffcc00;
+}
 
   .menu-btn {
     display: none;

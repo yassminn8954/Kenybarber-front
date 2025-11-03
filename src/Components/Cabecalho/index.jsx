@@ -44,7 +44,7 @@ const Cabecalho = () => {
         <Barbeirocoptero $display={menuOpen ? "none" : "block"} />
         <a
           className={activeLink === "home" ? "active" : ""}
-          onClick={() => { setActiveLink("home"); /* se quiser navegar coloque handleNavigate("/", "home") */ }}
+          onClick={() => { setActiveLink("home");  }}
         >
           Home
         </a>
